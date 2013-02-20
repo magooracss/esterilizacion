@@ -1,0 +1,268 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 410
+  Height = 136
+  Top = 167
+  Width = 895
+  Caption = 'Esterilización'
+  ClientHeight = 116
+  ClientWidth = 895
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -13
+  Font.Name = 'Arial'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Menu = MainMenu1
+  OnShow = FormShow
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '1.0.4.0'
+  object st: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 93
+    Width = 895
+    Panels = <    
+      item
+        Width = 200
+      end    
+      item
+        Alignment = taCenter
+        Width = 150
+      end    
+      item
+        Alignment = taRightJustify
+        Width = 200
+      end>
+    SimplePanel = False
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 90
+    Top = 0
+    Width = 895
+    ButtonHeight = 90
+    ButtonWidth = 87
+    Images = DM_General.buttons
+    ParentShowHint = False
+    ShowCaptions = True
+    ShowHint = True
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Action = prgSalir
+    end
+    object ToolButton2: TToolButton
+      Left = 98
+      Top = 2
+      Action = estIngreso
+    end
+    object ToolButton3: TToolButton
+      Left = 88
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton3'
+      Style = tbsSeparator
+    end
+    object ToolButton4: TToolButton
+      Left = 185
+      Top = 2
+      Action = estEgreso
+    end
+    object ToolButton5: TToolButton
+      Left = 272
+      Top = 2
+      Action = estHistorico
+    end
+    object ToolButton6: TToolButton
+      Left = 359
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton6'
+      Style = tbsSeparator
+    end
+    object ToolButton7: TToolButton
+      Left = 369
+      Top = 2
+      Action = prestIniciar
+    end
+    object ToolButton8: TToolButton
+      Left = 456
+      Top = 2
+      Action = prestDevolucion
+    end
+    object ToolButton9: TToolButton
+      Left = 543
+      Top = 2
+      Action = PrestListados
+    end
+  end
+  object listaAcciones: TActionList
+    Images = DM_General.buttons
+    left = 312
+    top = 32
+    object prgSalir: TAction
+      Category = 'Programa'
+      Caption = '&Salir'
+      Hint = 'Sale del programa'
+      ImageIndex = 0
+      OnExecute = prgSalirExecute
+    end
+    object tugAlumnos: TAction
+      Category = 'Programa'
+      Caption = '&Alumnos'
+      Hint = 'Modificaciones a los datos de los alumnos'
+      ImageIndex = 11
+      OnExecute = tugAlumnosExecute
+    end
+    object tugResponsables: TAction
+      Category = 'Programa'
+      Caption = 'Responsables'
+      Hint = 'Modificaciones a los datos de los responsables'
+      ImageIndex = 10
+      OnExecute = tugResponsablesExecute
+    end
+    object estIngreso: TAction
+      Category = 'Esterilizacion'
+      Caption = 'Ingreso'
+      Hint = 'Ingreso de material para esterilizar'
+      ImageIndex = 1
+      OnExecute = estIngresoExecute
+    end
+    object prgEditarLRF: TAction
+      Category = 'Programa'
+      Caption = 'Modificar Reportes'
+      Hint = 'Modifica los archivos de reporte'
+      ImageIndex = 1
+      OnExecute = prgEditarLRFExecute
+    end
+    object estReimpIngreso: TAction
+      Category = 'Esterilizacion'
+      Caption = 'Reimprimir Ingreso'
+      ImageIndex = 5
+      OnExecute = estReimpIngresoExecute
+    end
+    object estEgreso: TAction
+      Category = 'Esterilizacion'
+      Caption = 'Egreso'
+      Hint = 'Egreso del material esterilizado'
+      ImageIndex = 2
+      OnExecute = estEgresoExecute
+    end
+    object estHistorico: TAction
+      Category = 'Esterilizacion'
+      Caption = 'Histórico'
+      Hint = 'Imprime la información histórica de Esterilización'
+      ImageIndex = 3
+      OnExecute = estHistoricoExecute
+    end
+    object prestIniciar: TAction
+      Category = 'Prestamos'
+      Caption = 'Préstamo'
+      Hint = 'Inicia un prestamo de material'
+      ImageIndex = 6
+    end
+    object prestDevolucion: TAction
+      Category = 'Prestamos'
+      Caption = 'Devolución'
+      Hint = 'Devuelve al inventario el material prestado'
+      ImageIndex = 7
+    end
+    object prestInventario: TAction
+      Category = 'Prestamos'
+      Caption = 'Inventario'
+      Hint = 'Administra los materiales a prestar'
+      ImageIndex = 9
+    end
+    object PrestListados: TAction
+      Category = 'Prestamos'
+      Caption = 'Informes'
+      Hint = 'Listado de préstamos en el tiempo'
+      ImageIndex = 4
+    end
+    object tugDocentes: TAction
+      Category = 'Programa'
+      Caption = 'Docentes'
+      ImageIndex = 12
+      OnExecute = tugDocentesExecute
+    end
+    object prgUsuarios: TAction
+      Category = 'Programa'
+      Caption = 'Usuarios'
+      ImageIndex = 13
+      OnExecute = prgUsuariosExecute
+    end
+  end
+  object MainMenu1: TMainMenu
+    Images = DM_General.buttons
+    left = 48
+    top = 40
+    object MenuItem2: TMenuItem
+      Caption = 'Programa'
+      object MenuItem4: TMenuItem
+        Action = tugAlumnos
+      end
+      object MenuItem21: TMenuItem
+        Action = tugDocentes
+      end
+      object MenuItem5: TMenuItem
+        Action = tugResponsables
+      end
+      object MenuItem3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem22: TMenuItem
+        Action = prgUsuarios
+      end
+      object MenuItem8: TMenuItem
+        Action = prgEditarLRF
+      end
+      object MenuItem9: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem1: TMenuItem
+        Action = prgSalir
+      end
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Esterilización'
+      object MenuItem7: TMenuItem
+        Action = estIngreso
+      end
+      object MenuItem10: TMenuItem
+        Action = estReimpIngreso
+      end
+      object MenuItem12: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem11: TMenuItem
+        Action = estEgreso
+      end
+      object MenuItem13: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem14: TMenuItem
+        Action = estHistorico
+      end
+    end
+    object MenuItem15: TMenuItem
+      Caption = 'Prestamos'
+      object MenuItem16: TMenuItem
+        Action = prestIniciar
+      end
+      object MenuItem18: TMenuItem
+        Action = prestDevolucion
+      end
+      object MenuItem20: TMenuItem
+        Action = PrestListados
+      end
+      object MenuItem17: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem19: TMenuItem
+        Action = prestInventario
+      end
+    end
+  end
+end

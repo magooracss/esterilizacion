@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="esterilizacion"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MinorVersionNr Value="1"/>
+      <BuildNr Value="34"/>
+      <Language Value="040A"/>
+      <StringTable CompanyName="RACSS Programacion - www.racss.com.ar" LegalCopyright="Carlos Enrique Rodriguez" LegalTrademarks="Carlos Enrique Rodriguez" ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="7">
+      <Item1>
+        <PackageName Value="RackCtlsPkg"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="lazreport"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="rxnew"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="MemDSLaz"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="FCL"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="zcomponent"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="LCL"/>
+      </Item7>
+    </RequiredPackages>
+    <Units Count="19">
+      <Unit0>
+        <Filename Value="esterilizacion.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="esterilizacion"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="frm_principal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPrincipal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_Principal"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="dmgeneral.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM_General"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dmGeneral"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="frm_listadoalumnos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmListadoAlumnos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_listadoalumnos"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="dmalumnos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dm_alumnos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dmalumnos"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="dmconexion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dm_conexion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dmconexion"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="frm_alumnoae.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAlumnoae"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_alumnoae"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="dmfotos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM_Fotos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dmfotos"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="frm_listadoresponsables.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmListadoResponsables"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_ListadoResponsables"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="dmresponsables.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM_Responsables"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dmresponsables"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="frm_responsableae.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmResponsableae"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_responsableae"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="frm_ingresoesterilizar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmIngresoEsterilizar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_ingresoesterilizar"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="balanza.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="balanza"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="dmesterilizacion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM_Esterilizacion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dmesterilizacion"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="frm_validar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmValidacion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_validar"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="dmvalidar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM_Validar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dmvalidar"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="frm_egresoesterilizar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmEgresoEsterilizacion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_egresoesterilizar"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="frm_listadosesterilizar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmListadoEsterilizar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_listadosesterilizar"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="frm_permisosae.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPermisosAE"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_permisosAE"/>
+      </Unit18>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="esterilizacion"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="C:\lazarus\components\sinapse\source\lib\"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerMessages>
+        <MsgFileName Value=""/>
+      </CompilerMessages>
+      <CustomOptions Value="-dDESARROLLO
+#-dNombreEtiqueta"/>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

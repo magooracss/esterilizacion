@@ -1,0 +1,1692 @@
+object dm_alumnos: Tdm_alumnos
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 417
+  HorizontalOffset = 496
+  VerticalOffset = 116
+  Width = 632
+  object qTodosLosAlumnos: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbAlumnos'
+      'WHERE (bVisible = 1)'
+      '             and (Categoria LIKE :categoria)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'categoria'
+        ParamType = ptUnknown
+      end>
+    left = 88
+    top = 112
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'categoria'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosAlumnosIDALUMNO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosAlumnosCAPELLIDOS: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCNOMBRES: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosREFTIPODOC: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosDOCUMENTO: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosNROALUMNO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosTARJETALEGAJO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TARJETALEGAJO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosTARJETADIGITO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TARJETADIGITO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosREFFOTO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosAlumnosTXNOTAS: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosAlumnosDIRECCION: TStringField
+      DisplayWidth = 4000
+      FieldKind = fkData
+      FieldName = 'DIRECCION'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4000
+    end
+    object qTodosLosAlumnosTELEFONO: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'TELEFONO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qTodosLosAlumnosLOCALIDAD: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'LOCALIDAD'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosSUSPENDIDOINI: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUSPENDIDOINI'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosSUSPENDIDOFIN: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUSPENDIDOFIN'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosCATEGORIA: TStringField
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'CATEGORIA'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+  end
+  object tbAlumnos: TRxMemoryData
+    FieldDefs = <    
+      item
+        Name = 'idAlumno'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'cApellidos'
+        DataType = ftString
+        Precision = 0
+        Size = 500
+      end    
+      item
+        Name = 'cNombres'
+        DataType = ftString
+        Precision = 0
+        Size = 500
+      end    
+      item
+        Name = 'refTipoDoc'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Documento'
+        DataType = ftString
+        Precision = 0
+        Size = 30
+      end    
+      item
+        Name = 'nroAlumno'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'tarjetaLegajo'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'tarjetaDigito'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'txNotas'
+        DataType = ftString
+        Precision = 0
+        Size = 3000
+      end    
+      item
+        Name = 'bVisible'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Direccion'
+        DataType = ftString
+        Precision = 0
+        Size = 1000
+      end    
+      item
+        Name = 'Telefono'
+        DataType = ftString
+        Precision = 0
+        Size = 100
+      end    
+      item
+        Name = 'Localidad'
+        DataType = ftString
+        Precision = 0
+        Size = 500
+      end    
+      item
+        Name = 'SuspendidoIni'
+        DataType = ftDate
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'SuspendidoFin'
+        DataType = ftDate
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'refFoto'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'categoria'
+        DataType = ftString
+        Precision = 0
+        Size = 2
+      end>
+    AfterInsert = tbAlumnosAfterInsert
+    left = 240
+    top = 32
+    object tbAlumnosidAlumno: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'idAlumno'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbAlumnoscApellidos: TStringField
+      DisplayWidth = 500
+      FieldKind = fkData
+      FieldName = 'cApellidos'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 500
+    end
+    object tbAlumnoscNombres: TStringField
+      DisplayWidth = 500
+      FieldKind = fkData
+      FieldName = 'cNombres'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 500
+    end
+    object tbAlumnosrefTipoDoc: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'refTipoDoc'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnosDocumento: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'Documento'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object tbAlumnosnroAlumno: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'nroAlumno'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnostarjetaLegajo: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'tarjetaLegajo'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnostarjetaDigito: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'tarjetaDigito'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnostxNotas: TStringField
+      DisplayWidth = 3000
+      FieldKind = fkData
+      FieldName = 'txNotas'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+    object tbAlumnosbVisible: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'bVisible'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnosDireccion: TStringField
+      DisplayWidth = 1000
+      FieldKind = fkData
+      FieldName = 'Direccion'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object tbAlumnosTelefono: TStringField
+      DisplayWidth = 100
+      FieldKind = fkData
+      FieldName = 'Telefono'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object tbAlumnosLocalidad: TStringField
+      DisplayWidth = 500
+      FieldKind = fkData
+      FieldName = 'Localidad'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 500
+    end
+    object tbAlumnosSuspendidoIni: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SuspendidoIni'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnosSuspendidoFin: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SuspendidoFin'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnosrefFoto: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'refFoto'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbAlumnoscategoria: TStringField
+      DisplayWidth = 2
+      FieldKind = fkData
+      FieldName = 'categoria'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+  end
+  object qTiposDocumento: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tugTiposDocumento'
+      'WHERE bVisible = 1'
+    )
+    Params = <>
+    left = 544
+    top = 24
+    object qTiposDocumentoIDTIPODOCUMENTO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'IDTIPODOCUMENTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTiposDocumentoTIPODOCUMENTO: TStringField
+      DisplayWidth = 1200
+      FieldKind = fkData
+      FieldName = 'TIPODOCUMENTO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1200
+    end
+    object qTiposDocumentoBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object tbAlumnoSEL: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbAlumnos'
+      'WHERE idAlumno = :idAlumno'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'idAlumno'
+        ParamType = ptUnknown
+      end>
+    left = 240
+    top = 96
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idAlumno'
+        ParamType = ptUnknown
+      end>
+    object tbAlumnoSELIDALUMNO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object tbAlumnoSELCAPELLIDOS: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object tbAlumnoSELCNOMBRES: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object tbAlumnoSELCODBARRA: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object tbAlumnoSELREFTIPODOC: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnoSELDOCUMENTO: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object tbAlumnoSELNROALUMNO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnoSELTARJETALEGAJO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TARJETALEGAJO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnoSELTARJETADIGITO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TARJETADIGITO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnoSELREFFOTO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object tbAlumnoSELTXNOTAS: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object tbAlumnoSELDIRECCION: TStringField
+      DisplayWidth = 4000
+      FieldKind = fkData
+      FieldName = 'DIRECCION'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4000
+    end
+    object tbAlumnoSELTELEFONO: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'TELEFONO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object tbAlumnoSELLOCALIDAD: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'LOCALIDAD'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object tbAlumnoSELSUSPENDIDOINI: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUSPENDIDOINI'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnoSELSUSPENDIDOFIN: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUSPENDIDOFIN'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnoSELBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbAlumnoSELCATEGORIA: TStringField
+      DisplayWidth = 8
+      FieldKind = fkData
+      FieldName = 'CATEGORIA'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+  end
+  object tbAlumnoINS: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'INSERT INTO tbAlumnos'
+      '(IDALUMNO, CAPELLIDOS, CNOMBRES, REFTIPODOC, DOCUMENTO, NROALUMNO, TARJETALEGAJO, TARJETADIGITO, REFFOTO, TXNOTAS, DIRECCION, TELEFONO, LOCALIDAD, SUSPENDIDOINI, SUSPENDIDOFIN, BVISIBLE, CATEGORIA)'
+      'VALUES'
+      '(:IDALUMNO, :CAPELLIDOS, :CNOMBRES, :REFTIPODOC, :DOCUMENTO, :NROALUMNO, :TARJETALEGAJO, :TARJETADIGITO, :REFFOTO, :TXNOTAS, :DIRECCION, :TELEFONO, :LOCALIDAD, :SUSPENDIDOINI, :SUSPENDIDOFIN, :BVISIBLE, :CATEGORIA)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'idAlumno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CAPELLIDOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CNOMBRES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFTIPODOC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NROALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TARJETALEGAJO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TARJETADIGITO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFFOTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXNOTAS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DIRECCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TELEFONO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'LOCALIDAD'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SUSPENDIDOINI'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SUSPENDIDOFIN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CATEGORIA'
+        ParamType = ptUnknown
+      end>
+    left = 240
+    top = 160
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idAlumno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CAPELLIDOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CNOMBRES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFTIPODOC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NROALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TARJETALEGAJO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TARJETADIGITO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFFOTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXNOTAS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DIRECCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TELEFONO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'LOCALIDAD'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SUSPENDIDOINI'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SUSPENDIDOFIN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CATEGORIA'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosAlumnosIDALUMNO2: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosAlumnosCAPELLIDOS2: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCNOMBRES2: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCODBARRA2: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosREFTIPODOC2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosDOCUMENTO2: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosNROALUMNO2: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qTodosLosAlumnosREFFOTO2: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosAlumnosTXNOTAS2: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosAlumnosBVISIBLE2: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object tbAlumnoUPD: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'UPDATE  tbAlumnos'
+      'SET '
+      ' CAPELLIDOS = :CAPELLIDOS'
+      ', CNOMBRES = :CNOMBRES'
+      ', REFTIPODOC = :REFTIPODOC'
+      ', DOCUMENTO = :DOCUMENTO'
+      ', NROALUMNO = :NROALUMNO'
+      ', TARJETALEGAJO = :TARJETALEGAJO'
+      ', TARJETADIGITO = :TARJETADIGITO'
+      ', TXNOTAS = :TXNOTAS'
+      ', DIRECCION = :DIRECCION'
+      ', TELEFONO = :TELEFONO'
+      ', LOCALIDAD = :LOCALIDAD'
+      ', SUSPENDIDOINI = :SUSPENDIDOINI'
+      ', SUSPENDIDOFIN = :SUSPENDIDOFIN'
+      ', BVISIBLE = :BVISIBLE'
+      ', CATEGORIA = :CATEGORIA'
+      'WHERE idAlumno = :idAlumno'
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'CAPELLIDOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CNOMBRES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFTIPODOC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NROALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TARJETALEGAJO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TARJETADIGITO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXNOTAS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DIRECCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TELEFONO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'LOCALIDAD'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SUSPENDIDOINI'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SUSPENDIDOFIN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CATEGORIA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idAlumno'
+        ParamType = ptUnknown
+      end>
+    left = 240
+    top = 232
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'CAPELLIDOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CNOMBRES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFTIPODOC'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DOCUMENTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NROALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TARJETALEGAJO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TARJETADIGITO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXNOTAS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DIRECCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TELEFONO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'LOCALIDAD'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SUSPENDIDOINI'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'SUSPENDIDOFIN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CATEGORIA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idAlumno'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosAlumnosIDALUMNO3: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosAlumnosCAPELLIDOS3: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCNOMBRES3: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCODBARRA3: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosREFTIPODOC3: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosDOCUMENTO3: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosNROALUMNO3: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qTodosLosAlumnosREFFOTO3: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosAlumnosTXNOTAS3: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosAlumnosBVISIBLE3: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object tbAlumnoDEL: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'UPDATE  tbAlumnos'
+      'SET  BVISIBLE = 0'
+      'WHERE idAlumno = :idAlumno'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'idAlumno'
+        ParamType = ptUnknown
+      end>
+    left = 240
+    top = 304
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idAlumno'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosAlumnosIDALUMNO4: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosAlumnosCAPELLIDOS4: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCNOMBRES4: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCODBARRA4: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosREFTIPODOC4: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosDOCUMENTO4: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosNROALUMNO4: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qTodosLosAlumnosREFFOTO4: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosAlumnosTXNOTAS4: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosAlumnosBVISIBLE4: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qBuscarAlumnoCB: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbAlumnos'
+      'WHERE (bVisible = 1)'
+      '     and (tarjetaLegajo = :elLegajo)'
+      '     and (tarjetaDigito = :elDigito)'
+      '  '
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'elLegajo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'elDigito'
+        ParamType = ptUnknown
+      end>
+    left = 88
+    top = 184
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'elLegajo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'elDigito'
+        ParamType = ptUnknown
+      end>
+    object qBuscarAlumnoCBIDALUMNO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qBuscarAlumnoCBCAPELLIDOS: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qBuscarAlumnoCBCNOMBRES: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qBuscarAlumnoCBCODBARRA: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qBuscarAlumnoCBREFTIPODOC: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBuscarAlumnoCBDOCUMENTO: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qBuscarAlumnoCBNROALUMNO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBuscarAlumnoCBTARJETALEGAJO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TARJETALEGAJO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBuscarAlumnoCBTARJETADIGITO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TARJETADIGITO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBuscarAlumnoCBREFFOTO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBuscarAlumnoCBTXNOTAS: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qBuscarAlumnoCBDIRECCION: TStringField
+      DisplayWidth = 4000
+      FieldKind = fkData
+      FieldName = 'DIRECCION'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4000
+    end
+    object qBuscarAlumnoCBTELEFONO: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'TELEFONO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qBuscarAlumnoCBLOCALIDAD: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'LOCALIDAD'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qBuscarAlumnoCBSUSPENDIDOINI: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUSPENDIDOINI'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBuscarAlumnoCBSUSPENDIDOFIN: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUSPENDIDOFIN'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBuscarAlumnoCBBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+end

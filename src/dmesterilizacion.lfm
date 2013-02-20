@@ -1,0 +1,2275 @@
+object DM_Esterilizacion: TDM_Esterilizacion
+  OldCreateOrder = False
+  Height = 418
+  HorizontalOffset = 371
+  VerticalOffset = 137
+  Width = 928
+  object tbEsterilizacion: TRxMemoryData
+    FieldDefs = <    
+      item
+        Name = 'idEsterilizacion'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'nroOrden'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'codBarra'
+        DataType = ftString
+        Precision = 0
+        Size = 30
+      end    
+      item
+        Name = 'refAlumno'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'horaIngreso'
+        DataType = ftTime
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'fechaIngreso'
+        DataType = ftDate
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'pesoIngreso'
+        DataType = ftFloat
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'txObsIngreso'
+        DataType = ftString
+        Precision = 0
+        Size = 3500
+      end    
+      item
+        Name = 'refRespIngreso'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'horaEgreso'
+        DataType = ftTime
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'fechaEgreso'
+        DataType = ftDate
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'pesoEgreso'
+        DataType = ftFloat
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'txObsEgreso'
+        DataType = ftString
+        Precision = 0
+        Size = 3500
+      end    
+      item
+        Name = 'refRespEgreso'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'bVisible'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'ultAcceso'
+        DataType = ftDateTime
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'refUltAcceso'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'lxResponsable'
+        DataType = ftString
+        Precision = 0
+        Size = 500
+      end    
+      item
+        Name = 'refUltReimpresion'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end>
+    AfterInsert = tbEsterilizacionAfterInsert
+    left = 240
+    top = 32
+    object tbEsterilizacionidEsterilizacion: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'idEsterilizacion'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbEsterilizacionnroOrden: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'nroOrden'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacioncodBarra: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'codBarra'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object tbEsterilizacionrefAlumno: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'refAlumno'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbEsterilizacionhoraIngreso: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'horaIngreso'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionfechaIngreso: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'fechaIngreso'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionpesoIngreso: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'pesoIngreso'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '00.000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object tbEsterilizaciontxObsIngreso: TStringField
+      DisplayWidth = 3500
+      FieldKind = fkData
+      FieldName = 'txObsIngreso'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3500
+    end
+    object tbEsterilizacionhoraEgreso: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'horaEgreso'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionfechaEgreso: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'fechaEgreso'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionpesoEgreso: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'pesoEgreso'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '00.000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object tbEsterilizaciontxObsEgreso: TStringField
+      DisplayWidth = 3500
+      FieldKind = fkData
+      FieldName = 'txObsEgreso'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3500
+    end
+    object tbEsterilizacionrefRespEgreso: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'refRespEgreso'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbEsterilizacionbVisible: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'bVisible'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionultAcceso: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ultAcceso'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionrefUltAcceso: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'refUltAcceso'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbEsterilizacionrefRespIngreso: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'refRespIngreso'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbEsterilizacionlxResponsable: TStringField
+      DisplayWidth = 500
+      FieldKind = fkData
+      FieldName = 'lxResponsable'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 500
+    end
+    object tbEsterilizacionrefUltReimpresion: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'refUltReimpresion'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+  end
+  object tbEsterilizacionSEL: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbEsterilizacion'
+      'WHERE idEsterilizacion = :idEsterilizacion'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'idEsterilizacion'
+        ParamType = ptUnknown
+      end>
+    left = 240
+    top = 104
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idEsterilizacion'
+        ParamType = ptUnknown
+      end>
+    object tbEsterilizacionSELIDESTERILIZACION: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDESTERILIZACION'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object tbEsterilizacionSELNROORDEN: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NROORDEN'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELCODBARRA: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object tbEsterilizacionSELREFALUMNO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFALUMNO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object tbEsterilizacionSELHORAINGRESO: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORAINGRESO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELFECHAINGRESO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHAINGRESO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELPESOINGRESO: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PESOINGRESO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object tbEsterilizacionSELTXOBSINGRESO: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXOBSINGRESO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object tbEsterilizacionSELREFRESPINGRESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPINGRESO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object tbEsterilizacionSELHORAEGRESO: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORAEGRESO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELFECHAEGRESO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHAEGRESO'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELPESOEGRESO: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PESOEGRESO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object tbEsterilizacionSELTXOBSEGRESO: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXOBSEGRESO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object tbEsterilizacionSELREFRESPEGRESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPEGRESO'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object tbEsterilizacionSELBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELULTACCESO: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ULTACCESO'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELREFULTACCESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTACCESO'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object tbEsterilizacionSELREFULTREIMPRESION: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTREIMPRESION'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+  end
+  object tbEsterilizacionINS: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'INSERT INTO tbEsterilizacion'
+      '(IDESTERILIZACION, NROORDEN, CODBARRA, REFALUMNO, HORAINGRESO, FECHAINGRESO, PESOINGRESO, TXOBSINGRESO, REFRESPINGRESO, HORAEGRESO, FECHAEGRESO, PESOEGRESO, TXOBSEGRESO, REFRESPEGRESO, BVISIBLE, ULTACCESO, REFULTACCESO, REFULTREIMPRESION)'
+      'VALUES'
+      '(:IDESTERILIZACION, :NROORDEN, :CODBARRA, :REFALUMNO, :HORAINGRESO, :FECHAINGRESO, :PESOINGRESO, :TXOBSINGRESO, :REFRESPINGRESO, :HORAEGRESO, :FECHAEGRESO, :PESOEGRESO, :TXOBSEGRESO, :REFRESPEGRESO, :BVISIBLE, :ULTACCESO, :REFULTACCESO, :REFULTREIMPRESION)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDESTERILIZACION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NROORDEN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODBARRA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HORAINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHAINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESOINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXOBSINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HORAEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHAEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESOEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXOBSEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTREIMPRESION'
+        ParamType = ptUnknown
+      end>
+    left = 240
+    top = 168
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDESTERILIZACION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NROORDEN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODBARRA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HORAINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHAINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESOINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXOBSINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HORAEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHAEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESOEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXOBSEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTREIMPRESION'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosAlumnosIDALUMNO2: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosAlumnosCAPELLIDOS2: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCNOMBRES2: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCODBARRA2: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosREFTIPODOC2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosDOCUMENTO2: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosNROALUMNO2: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qTodosLosAlumnosREFFOTO2: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosAlumnosTXNOTAS2: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosAlumnosBVISIBLE2: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object tbEsterilizacionUPD: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'UPDATE  tbEsterilizacion'
+      'SET '
+      '  NROORDEN = :NROORDEN'
+      ', CODBARRA = :CODBARRA'
+      ', REFALUMNO = :REFALUMNO'
+      ', HORAINGRESO = :HORAINGRESO'
+      ', FECHAINGRESO = :FECHAINGRESO'
+      ', PESOINGRESO = :PESOINGRESO'
+      ', TXOBSINGRESO = :TXOBSINGRESO'
+      ', REFRESPINGRESO = :REFRESPINGRESO'
+      ', HORAEGRESO = :HORAEGRESO'
+      ', FECHAEGRESO = :FECHAEGRESO'
+      ', PESOEGRESO = :PESOEGRESO'
+      ', TXOBSEGRESO = :TXOBSEGRESO'
+      ', REFRESPEGRESO = :REFRESPEGRESO'
+      ', BVISIBLE = :BVISIBLE'
+      ', ULTACCESO = :ULTACCESO'
+      ', REFULTACCESO = :REFULTACCESO'
+      ',REFULTREIMPRESION = :REFULTREIMPRESION'
+      'WHERE IDESTERILIZACION = :IDESTERILIZACION'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'NROORDEN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODBARRA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HORAINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHAINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESOINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXOBSINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HORAEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHAEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESOEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXOBSEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTREIMPRESION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDESTERILIZACION'
+        ParamType = ptUnknown
+      end>
+    left = 240
+    top = 240
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'NROORDEN'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODBARRA'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HORAINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHAINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESOINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXOBSINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPINGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HORAEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FECHAEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESOEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TXOBSEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTREIMPRESION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDESTERILIZACION'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosAlumnosIDALUMNO3: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosAlumnosCAPELLIDOS3: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCNOMBRES3: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCODBARRA3: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosREFTIPODOC3: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosDOCUMENTO3: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosNROALUMNO3: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qTodosLosAlumnosREFFOTO3: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosAlumnosTXNOTAS3: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosAlumnosBVISIBLE3: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object tbEsterilizacionDEL: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'UPDATE  tbEsterilizacion'
+      'SET  BVISIBLE = 0'
+      'WHERE idEsterilizacion = :idEsterilizacion'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'idEsterilizacion'
+        ParamType = ptUnknown
+      end>
+    left = 240
+    top = 312
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idEsterilizacion'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosAlumnosIDALUMNO4: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosAlumnosCAPELLIDOS4: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCNOMBRES4: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCODBARRA4: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosREFTIPODOC4: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosDOCUMENTO4: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosNROALUMNO4: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qTodosLosAlumnosREFFOTO4: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosAlumnosTXNOTAS4: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosAlumnosBVISIBLE4: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qBUSPorNroOrdenEgreso: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbEsterilizacion'
+      'WHERE NroOrden = :nroOrden'
+      '            and (fechaIngreso >= :PrimerDia)'
+      '            and (refAlumno = :refAlumno)'
+      '            and (PesoEgreso = 0) '
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'nroOrden'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PrimerDia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'refAlumno'
+        ParamType = ptUnknown
+      end>
+    left = 48
+    top = 112
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'nroOrden'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PrimerDia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'refAlumno'
+        ParamType = ptUnknown
+      end>
+    object qBUSPorNroOrdenEgresoIDESTERILIZACION: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDESTERILIZACION'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qBUSPorNroOrdenEgresoNROORDEN: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NROORDEN'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoCODBARRA: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qBUSPorNroOrdenEgresoREFALUMNO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFALUMNO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBUSPorNroOrdenEgresoHORAINGRESO: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORAINGRESO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoFECHAINGRESO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHAINGRESO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoPESOINGRESO: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PESOINGRESO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qBUSPorNroOrdenEgresoTXOBSINGRESO: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXOBSINGRESO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qBUSPorNroOrdenEgresoREFRESPINGRESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPINGRESO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBUSPorNroOrdenEgresoHORAEGRESO: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORAEGRESO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoFECHAEGRESO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHAEGRESO'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoPESOEGRESO: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PESOEGRESO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qBUSPorNroOrdenEgresoTXOBSEGRESO: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXOBSEGRESO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qBUSPorNroOrdenEgresoREFRESPEGRESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPEGRESO'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBUSPorNroOrdenEgresoBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoULTACCESO: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ULTACCESO'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoREFULTACCESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTACCESO'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBUSPorNroOrdenEgresoREFULTREIMPRESION: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTREIMPRESION'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+  end
+  object RepEtiqueta: TfrReport
+    Dataset = frDataSet
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbPrint, pbExit]
+    DataType = dtDataSet
+    left = 376
+    top = 38
+    ReportForm = {
+      19000000
+    }
+  end
+  object frDataSet: TfrDBDataSet
+    DataSet = tbEsterilizacion
+    left = 376
+    top = 112
+  end
+  object frShapeObject1: TfrShapeObject
+    left = 448
+    top = 55
+  end
+  object frBarCodeObject1: TfrBarCodeObject
+    left = 466
+    top = 112
+  end
+  object frDesigner1: TfrDesigner
+    left = 536
+    top = 102
+  end
+  object RepTicket: TfrReport
+    Dataset = frDataSet
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbPrint, pbExit]
+    DataType = dtDataSet
+    left = 376
+    top = 208
+    ReportForm = {
+      19000000
+    }
+  end
+  object qMatSinEntregar: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT E.*'
+      '             , R.cApellidos  as lxResponsable'
+      'FROM tbEsterilizacion E'
+      '            left join tbResponsables R ON E.refRespIngreso = R.idResponsable'
+      'WHERE (E.refAlumno = :refAlumno)'
+      '            and (E.PesoEgreso = 0)'
+      '             and (E.bVisible = 1)'
+      'ORDER BY E.fechaIngreso, E.HoraIngreso'
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'refAlumno'
+        ParamType = ptUnknown
+      end>
+    left = 48
+    top = 184
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'refAlumno'
+        ParamType = ptUnknown
+      end>
+    object tbEsterilizacionSELIDESTERILIZACION1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDESTERILIZACION'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object tbEsterilizacionSELNROORDEN1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NROORDEN'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELCODBARRA1: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object tbEsterilizacionSELREFALUMNO1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFALUMNO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object tbEsterilizacionSELHORAINGRESO1: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORAINGRESO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELFECHAINGRESO1: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHAINGRESO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELPESOINGRESO1: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PESOINGRESO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object tbEsterilizacionSELTXOBSINGRESO1: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXOBSINGRESO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object tbEsterilizacionSELREFRESPINGRESO1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPINGRESO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object tbEsterilizacionSELHORAEGRESO1: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORAEGRESO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELFECHAEGRESO1: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHAEGRESO'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELPESOEGRESO1: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PESOEGRESO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object tbEsterilizacionSELTXOBSEGRESO1: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXOBSEGRESO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object tbEsterilizacionSELREFRESPEGRESO1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPEGRESO'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object tbEsterilizacionSELBVISIBLE1: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELULTACCESO1: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ULTACCESO'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbEsterilizacionSELREFULTACCESO1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTACCESO'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qMatSinEntregarLXRESPONSABLE: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'LXRESPONSABLE'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qMatSinEntregarREFULTREIMPRESION: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTREIMPRESION'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+  end
+  object tbListadoEsterilizacion: TRxMemoryData
+    FieldDefs = <    
+      item
+        Name = 'Alumno'
+        DataType = ftString
+        Precision = 0
+        Size = 1000
+      end    
+      item
+        Name = 'Orden'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Ing_Fecha'
+        DataType = ftDate
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Ing_Hora'
+        DataType = ftTime
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Ing_Peso'
+        DataType = ftFloat
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Ing_Responsable'
+        DataType = ftString
+        Precision = 0
+        Size = 1000
+      end    
+      item
+        Name = 'Egr_Fecha'
+        DataType = ftDate
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Egr_Hora'
+        DataType = ftTime
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Egr_Peso'
+        DataType = ftFloat
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Egr_Responsable'
+        DataType = ftString
+        Precision = 0
+        Size = 1000
+      end    
+      item
+        Name = 'Reimp_Responsable'
+        DataType = ftString
+        Precision = 0
+        Size = 1000
+      end>
+    left = 704
+    top = 32
+    object tbListadoEsterilizacionAlumno: TStringField
+      DisplayWidth = 1000
+      FieldKind = fkData
+      FieldName = 'Alumno'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object tbListadoEsterilizacionOrden: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Orden'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbListadoEsterilizacionIng_Fecha: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Ing_Fecha'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbListadoEsterilizacionIng_Hora: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Ing_Hora'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbListadoEsterilizacionIng_Peso: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Ing_Peso'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object tbListadoEsterilizacionIng_Responsable: TStringField
+      DisplayWidth = 1000
+      FieldKind = fkData
+      FieldName = 'Ing_Responsable'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object tbListadoEsterilizacionEgr_Fecha: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Egr_Fecha'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbListadoEsterilizacionEgr_Hora: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Egr_Hora'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbListadoEsterilizacionEgr_Peso: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Egr_Peso'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object tbListadoEsterilizacionEgr_Responsable: TStringField
+      DisplayWidth = 1000
+      FieldKind = fkData
+      FieldName = 'Egr_Responsable'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object tbListadoEsterilizacionReimp_Responsable: TStringField
+      DisplayWidth = 1000
+      FieldKind = fkData
+      FieldName = 'Reimp_Responsable'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+  end
+  object qListadoEsterilizacion: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT E.*'
+      '             , R.cApellidos  as lxResponsable'
+      'FROM tbEsterilizacion E'
+      '            left join tbResponsables R ON E.refRespIngreso = R.idResponsable'
+      ' '
+    )
+    Params = <>
+    left = 704
+    top = 110
+  end
+  object frHistorico: TfrDBDataSet
+    DataSet = tbListadoEsterilizacion
+    left = 712
+    top = 192
+  end
+  object qBUSPorCB: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbEsterilizacion'
+      'WHERE codBarra LIKE :codBarra'
+      '            and (fechaIngreso >= :PrimerDia)'
+      '            and (refAlumno = :refAlumno)'
+      '            and (PesoEgreso = 0) '
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'codBarra'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PrimerDia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'refAlumno'
+        ParamType = ptUnknown
+      end>
+    left = 48
+    top = 56
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'codBarra'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PrimerDia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'refAlumno'
+        ParamType = ptUnknown
+      end>
+    object qBUSPorNroOrdenEgresoIDESTERILIZACION1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDESTERILIZACION'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qBUSPorNroOrdenEgresoNROORDEN1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'NROORDEN'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoCODBARRA1: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qBUSPorNroOrdenEgresoREFALUMNO1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFALUMNO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBUSPorNroOrdenEgresoHORAINGRESO1: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORAINGRESO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoFECHAINGRESO1: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHAINGRESO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoPESOINGRESO1: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PESOINGRESO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qBUSPorNroOrdenEgresoTXOBSINGRESO1: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXOBSINGRESO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qBUSPorNroOrdenEgresoREFRESPINGRESO1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPINGRESO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBUSPorNroOrdenEgresoHORAEGRESO1: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORAEGRESO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoFECHAEGRESO1: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FECHAEGRESO'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoPESOEGRESO1: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PESOEGRESO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object qBUSPorNroOrdenEgresoTXOBSEGRESO1: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXOBSEGRESO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qBUSPorNroOrdenEgresoREFRESPEGRESO1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPEGRESO'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBUSPorNroOrdenEgresoBVISIBLE1: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoULTACCESO1: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ULTACCESO'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBUSPorNroOrdenEgresoREFULTACCESO1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTACCESO'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBUSPorCBREFULTREIMPRESION: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTREIMPRESION'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+  end
+end

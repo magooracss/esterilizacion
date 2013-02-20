@@ -1,0 +1,120 @@
+object DM_Fotos: TDM_Fotos
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 300
+  HorizontalOffset = 302
+  VerticalOffset = 137
+  Width = 564
+  object tbFoto: TRxMemoryData
+    FieldDefs = <    
+      item
+        Name = 'idFoto'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'Foto'
+        DataType = ftBlob
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'relacion'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end>
+    AfterInsert = tbFotoAfterInsert
+    left = 200
+    top = 64
+    object tbFotoidFoto: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'idFoto'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbFotoFoto: TBlobField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Foto'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftWideMemo
+    end
+    object tbFotorelacion: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'relacion'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+  end
+  object qFotoRelacion: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbFotos'
+      'WHERE relacion = :relacion'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'relacion'
+        ParamType = ptUnknown
+      end>
+    left = 56
+    top = 136
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'relacion'
+        ParamType = ptUnknown
+      end>
+    object qFotoRelacionIDFOTO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDFOTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qFotoRelacionFOTO: TBlobField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FOTO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftGraphic
+    end
+    object qFotoRelacionRELACION: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'RELACION'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+  end
+end

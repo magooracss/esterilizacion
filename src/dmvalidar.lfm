@@ -1,0 +1,1712 @@
+object DM_Validar: TDM_Validar
+  OldCreateOrder = False
+  Height = 490
+  HorizontalOffset = 751
+  VerticalOffset = 200
+  Width = 327
+  object qBuscarUsuario: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbUsuarios'
+      'WHERE (usuario LIKE :usuario)'
+      '           and (bVisible = 1)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'usuario'
+        ParamType = ptUnknown
+      end>
+    left = 56
+    top = 88
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'usuario'
+        ParamType = ptUnknown
+      end>
+    object qBuscarUsuarioIDUSUARIO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDUSUARIO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qBuscarUsuarioUSUARIO: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'USUARIO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qBuscarUsuarioCLAVE: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CLAVE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qBuscarUsuarioPAPLICACION: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PAPLICACION'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPESTMATERIAL: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PESTMATERIAL'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPESTHISTORICO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PESTHISTORICO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPPRESTARTICULOS: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PPRESTARTICULOS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPSUSPENCIONES: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PSUSPENCIONES'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPALUMNOS: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PALUMNOS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPDOCENTES: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PDOCENTES'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPARTICULOS: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PARTICULOS'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPPERSONAL: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PPERSONAL'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPTARJETAALUMNO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PTARJETAALUMNO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPTARJETAARTICULO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PTARJETAARTICULO'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioPTARJETAPERSONAL: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PTARJETAPERSONAL'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qBuscarUsuarioBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBuscarUsuarioULTACCESO: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ULTACCESO'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBuscarUsuarioREFULTACCESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTACCESO'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+  end
+  object tbUsuarios: TRxMemoryData
+    FieldDefs = <    
+      item
+        Name = 'idUsuario'
+        DataType = ftString
+        Precision = -1
+        Size = 38
+      end    
+      item
+        Name = 'Usuario'
+        DataType = ftString
+        Precision = -1
+        Size = 200
+      end    
+      item
+        Name = 'Clave'
+        DataType = ftString
+        Precision = -1
+        Size = 120
+      end    
+      item
+        Name = 'pAplicacion'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pEstMaterial'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pEstHistorico'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pPrestArticulos'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pSuspenciones'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pAlumnos'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pDocentes'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pArticulos'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pPersonal'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pTarjetaAlumno'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pTarjetaPersonal'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'pTarjetaArticulo'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'bVisible'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'UltAcceso'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'refUltAcceso'
+        DataType = ftString
+        Precision = -1
+        Size = 38
+      end>
+    AfterInsert = tbUsuariosAfterInsert
+    left = 184
+    top = 24
+    object tbUsuariosidUsuario: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'idUsuario'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbUsuariosUsuario: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'Usuario'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object tbUsuariosClave: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'Clave'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object tbUsuariospAplicacion: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pAplicacion'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospEstMaterial: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pEstMaterial'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospEstHistorico: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pEstHistorico'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospPrestArticulos: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pPrestArticulos'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospSuspenciones: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pSuspenciones'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospAlumnos: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pAlumnos'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospDocentes: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pDocentes'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospArticulos: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pArticulos'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospPersonal: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pPersonal'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospTarjetaAlumno: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pTarjetaAlumno'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospTarjetaPersonal: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pTarjetaPersonal'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariospTarjetaArticulo: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'pTarjetaArticulo'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosbVisible: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'bVisible'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbUsuariosUltAcceso: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'UltAcceso'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbUsuariosrefUltAcceso: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'refUltAcceso'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+  end
+  object tbUsuariosSEL: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbUsuarios'
+      'WHERE idUsuario = :idUsuario'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'idUsuario'
+        ParamType = ptUnknown
+      end>
+    left = 184
+    top = 96
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idUsuario'
+        ParamType = ptUnknown
+      end>
+    object tbUsuariosSELIDUSUARIO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDUSUARIO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object tbUsuariosSELUSUARIO: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'USUARIO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object tbUsuariosSELCLAVE: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CLAVE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object tbUsuariosSELPAPLICACION: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PAPLICACION'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPESTMATERIAL: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PESTMATERIAL'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPESTHISTORICO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PESTHISTORICO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPPRESTARTICULOS: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PPRESTARTICULOS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPSUSPENCIONES: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PSUSPENCIONES'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPALUMNOS: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PALUMNOS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPDOCENTES: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PDOCENTES'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPARTICULOS: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PARTICULOS'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPPERSONAL: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PPERSONAL'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPTARJETAALUMNO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PTARJETAALUMNO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPTARJETAARTICULO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PTARJETAARTICULO'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELPTARJETAPERSONAL: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PTARJETAPERSONAL'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbUsuariosSELBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbUsuariosSELULTACCESO: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ULTACCESO'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbUsuariosSELREFULTACCESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTACCESO'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+  end
+  object tbUsuariosINS: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'INSERT INTO tbUsuarios'
+      '(IDUSUARIO, USUARIO, CLAVE, PAPLICACION, PESTMATERIAL, PESTHISTORICO, PPRESTARTICULOS, PSUSPENCIONES, PALUMNOS, PDOCENTES, PARTICULOS, PPERSONAL, PTARJETAALUMNO, PTARJETAARTICULO, PTARJETAPERSONAL, BVISIBLE, ULTACCESO, REFULTACCESO)'
+      'VALUES'
+      '(:IDUSUARIO, :USUARIO, :CLAVE, :PAPLICACION, :PESTMATERIAL, :PESTHISTORICO, :PPRESTARTICULOS, :PSUSPENCIONES, :PALUMNOS, :PDOCENTES, :PARTICULOS, :PPERSONAL, :PTARJETAALUMNO, :PTARJETAARTICULO, :PTARJETAPERSONAL, :BVISIBLE, :ULTACCESO, :REFULTACCESO)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDUSUARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'USUARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CLAVE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PAPLICACION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESTMATERIAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESTHISTORICO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PPRESTARTICULOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PSUSPENCIONES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PALUMNOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PDOCENTES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PARTICULOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PPERSONAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAARTICULO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAPERSONAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTACCESO'
+        ParamType = ptUnknown
+      end>
+    left = 184
+    top = 160
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDUSUARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'USUARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CLAVE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PAPLICACION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESTMATERIAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESTHISTORICO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PPRESTARTICULOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PSUSPENCIONES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PALUMNOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PDOCENTES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PARTICULOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PPERSONAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAARTICULO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAPERSONAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTACCESO'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosAlumnosIDALUMNO2: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosAlumnosCAPELLIDOS2: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCNOMBRES2: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCODBARRA2: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosREFTIPODOC2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosDOCUMENTO2: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosNROALUMNO2: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qTodosLosAlumnosREFFOTO2: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosAlumnosTXNOTAS2: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosAlumnosBVISIBLE2: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object tbUsuariosUPD: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'UPDATE  tbUsuarios'
+      'SET '
+      '  USUARIO = :USUARIO '
+      ', CLAVE = :CLAVE '
+      ', PAPLICACION = :PAPLICACION '
+      ', PESTMATERIAL = :PESTMATERIAL '
+      ', PESTHISTORICO = :PESTHISTORICO '
+      ', PPRESTARTICULOS = :PPRESTARTICULOS '
+      ', PSUSPENCIONES = :PSUSPENCIONES '
+      ', PALUMNOS = :PALUMNOS '
+      ', PDOCENTES = :PDOCENTES '
+      ', PARTICULOS = :PARTICULOS '
+      ', PPERSONAL = :PPERSONAL '
+      ', PTARJETAALUMNO = :PTARJETAALUMNO '
+      ', PTARJETAARTICULO = :PTARJETAARTICULO '
+      ', PTARJETAPERSONAL = :PTARJETAPERSONAL '
+      ', BVISIBLE = :BVISIBLE '
+      ', ULTACCESO = :ULTACCESO '
+      ', REFULTACCESO = :REFULTACCESO '
+      'WHERE IDUSUARIO = :IDUSUARIO'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'USUARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CLAVE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PAPLICACION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESTMATERIAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESTHISTORICO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PPRESTARTICULOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PSUSPENCIONES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PALUMNOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PDOCENTES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PARTICULOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PPERSONAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAARTICULO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAPERSONAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDUSUARIO'
+        ParamType = ptUnknown
+      end>
+    left = 184
+    top = 232
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'USUARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CLAVE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PAPLICACION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESTMATERIAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PESTHISTORICO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PPRESTARTICULOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PSUSPENCIONES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PALUMNOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PDOCENTES'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PARTICULOS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PPERSONAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAARTICULO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'PTARJETAPERSONAL'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFULTACCESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDUSUARIO'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosAlumnosIDALUMNO3: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosAlumnosCAPELLIDOS3: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCNOMBRES3: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCODBARRA3: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosREFTIPODOC3: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosDOCUMENTO3: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosNROALUMNO3: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qTodosLosAlumnosREFFOTO3: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosAlumnosTXNOTAS3: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosAlumnosBVISIBLE3: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object tbUsuariosDEL: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'UPDATE  tbUsuarios'
+      'SET  BVISIBLE = 0'
+      'WHERE idUsuario = :idUsuario'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'idUsuario'
+        ParamType = ptUnknown
+      end>
+    left = 184
+    top = 296
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idUsuario'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosAlumnosIDALUMNO4: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDALUMNO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosAlumnosCAPELLIDOS4: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCNOMBRES4: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosAlumnosCODBARRA4: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODBARRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosREFTIPODOC4: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosAlumnosDOCUMENTO4: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosAlumnosNROALUMNO4: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'NROALUMNO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qTodosLosAlumnosREFFOTO4: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosAlumnosTXNOTAS4: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosAlumnosBVISIBLE4: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qUsuariosActivos: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbUsuarios'
+      'WHERE bVisible = 1'
+    )
+    Params = <>
+    left = 48
+    top = 208
+    object qUsuariosActivosIDUSUARIO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDUSUARIO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qUsuariosActivosUSUARIO: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'USUARIO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qUsuariosActivosCLAVE: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CLAVE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qUsuariosActivosPAPLICACION: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PAPLICACION'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPESTMATERIAL: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PESTMATERIAL'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPESTHISTORICO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PESTHISTORICO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPPRESTARTICULOS: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PPRESTARTICULOS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPSUSPENCIONES: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PSUSPENCIONES'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPALUMNOS: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PALUMNOS'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPDOCENTES: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PDOCENTES'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPARTICULOS: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PARTICULOS'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPPERSONAL: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PPERSONAL'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPTARJETAALUMNO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PTARJETAALUMNO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPTARJETAARTICULO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PTARJETAARTICULO'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosPTARJETAPERSONAL: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'PTARJETAPERSONAL'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qUsuariosActivosBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qUsuariosActivosULTACCESO: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ULTACCESO'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qUsuariosActivosREFULTACCESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFULTACCESO'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+  end
+end

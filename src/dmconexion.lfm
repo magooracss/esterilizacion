@@ -1,0 +1,24 @@
+object dm_conexion: Tdm_conexion
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 375
+  HorizontalOffset = 397
+  VerticalOffset = 262
+  Width = 531
+  object cnxGeneral: TZConnection
+    ControlsCodePage = cCP_UTF8
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    ClientCodepage = 'UTF8'
+    Properties.Strings = (
+      'codepage=UTF8'
+    )
+    Port = 0
+    Database = 'C:\folp\esterilizacion\ESTERILIZACION.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird-2.5'
+    left = 136
+    top = 90
+  end
+end
