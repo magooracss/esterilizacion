@@ -1781,4 +1781,445 @@ object DM_Responsables: TDM_Responsables
       Required = False
     end
   end
+  object qBuscarPorApellido: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbResponsables'
+      'WHERE (bVisible = 1)'
+      '             and (UPPER(cApellidos) LIKE UPPER(:cApellidos) || ''%'')'
+      'ORDER BY cApellidos, cNombres'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'cApellidos'
+        ParamType = ptUnknown
+      end>
+    left = 496
+    top = 168
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'cApellidos'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosResponsablesIDRESPONSABLE1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDRESPONSABLE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosResponsablesCAPELLIDOS1: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosResponsablesCNOMBRES1: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosResponsablesREFTIPODOC1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesDOCUMENTO1: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosResponsablesLEGAJO1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'LEGAJO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesREFFOTO1: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosResponsablesTXNOTAS1: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosResponsablesTARJETALEGAJO1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TARJETALEGAJO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesTARJETADIGITO1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TARJETADIGITO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesHORARIO1INI1: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORARIO1INI'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesHORARIO1FIN1: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORARIO1FIN'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesHORARIO2INI1: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORARIO2INI'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesHORARIO2FIN1: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORARIO2FIN'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesFRANCODIA1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FRANCODIA'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesFRANCOINI1: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FRANCOINI'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesFRANCOFIN1: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FRANCOFIN'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesREFGRUPO1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFGRUPO'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesBVISIBLE1: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qBuscarPorLegajos: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbResponsables'
+      'WHERE (bVisible = 1)'
+      '       and (Legajo = :legajo)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'legajo'
+        ParamType = ptUnknown
+      end>
+    left = 496
+    top = 240
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'legajo'
+        ParamType = ptUnknown
+      end>
+    object qTodosLosResponsablesIDRESPONSABLE2: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDRESPONSABLE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qTodosLosResponsablesCAPELLIDOS2: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CAPELLIDOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosResponsablesCNOMBRES2: TStringField
+      DisplayWidth = 2000
+      FieldKind = fkData
+      FieldName = 'CNOMBRES'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2000
+    end
+    object qTodosLosResponsablesREFTIPODOC2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFTIPODOC'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesDOCUMENTO2: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'DOCUMENTO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qTodosLosResponsablesLEGAJO2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'LEGAJO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesREFFOTO2: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFFOTO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qTodosLosResponsablesTXNOTAS2: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TXNOTAS'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qTodosLosResponsablesTARJETALEGAJO2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TARJETALEGAJO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesTARJETADIGITO2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TARJETADIGITO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesHORARIO1INI2: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORARIO1INI'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesHORARIO1FIN2: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORARIO1FIN'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesHORARIO2INI2: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORARIO2INI'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesHORARIO2FIN2: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HORARIO2FIN'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesFRANCODIA2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FRANCODIA'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesFRANCOINI2: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FRANCOINI'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesFRANCOFIN2: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FRANCOFIN'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesREFGRUPO2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'REFGRUPO'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qTodosLosResponsablesBVISIBLE2: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
 end

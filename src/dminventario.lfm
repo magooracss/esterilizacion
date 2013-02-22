@@ -1,0 +1,7 @@
+object DM_Inventario: TDM_Inventario
+  OldCreateOrder = False
+  Height = 405
+  HorizontalOffset = 385
+  VerticalOffset = 135
+  Width = 406
+end

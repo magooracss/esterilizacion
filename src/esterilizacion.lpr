@@ -13,7 +13,8 @@ uses
   frm_ingresoesterilizar, balanza, dmesterilizacion, frm_validar, dmvalidar,
   frm_egresoesterilizar, frm_listadosesterilizar
   { you can add units after this }
-  ,controls, frm_permisosAE
+  ,controls, frm_permisosAE, frm_busquedapersona, frm_listadoinventario, 
+dminventario
 ;
 {$R *.res}
 
@@ -34,6 +35,9 @@ begin
 
   frmValidacion.Free;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmBuscarPersonas, frmBuscarPersonas);
+  Application.CreateForm(TfrmListadoInventario, frmListadoInventario);
+  Application.CreateForm(TDM_Inventario, DM_Inventario);
   Application.Run;
 end.
 

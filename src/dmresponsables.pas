@@ -64,25 +64,65 @@ type
     qTodosLosAlumnosTXNOTAS2: TMemoField;
     qTodosLosAlumnosTXNOTAS3: TMemoField;
     qTodosLosAlumnosTXNOTAS4: TMemoField;
+    qBuscarPorApellido: TZQuery;
+    qBuscarPorLegajos: TZQuery;
     qTodosLosResponsablesBVISIBLE: TSmallintField;
+    qTodosLosResponsablesBVISIBLE1: TSmallintField;
+    qTodosLosResponsablesBVISIBLE2: TSmallintField;
     qTodosLosResponsablesCAPELLIDOS: TStringField;
+    qTodosLosResponsablesCAPELLIDOS1: TStringField;
+    qTodosLosResponsablesCAPELLIDOS2: TStringField;
     qTodosLosResponsablesCNOMBRES: TStringField;
+    qTodosLosResponsablesCNOMBRES1: TStringField;
+    qTodosLosResponsablesCNOMBRES2: TStringField;
     qTodosLosResponsablesDOCUMENTO: TStringField;
+    qTodosLosResponsablesDOCUMENTO1: TStringField;
+    qTodosLosResponsablesDOCUMENTO2: TStringField;
     qTodosLosResponsablesFRANCODIA: TLongintField;
+    qTodosLosResponsablesFRANCODIA1: TLongintField;
+    qTodosLosResponsablesFRANCODIA2: TLongintField;
     qTodosLosResponsablesFRANCOFIN: TTimeField;
+    qTodosLosResponsablesFRANCOFIN1: TTimeField;
+    qTodosLosResponsablesFRANCOFIN2: TTimeField;
     qTodosLosResponsablesFRANCOINI: TTimeField;
+    qTodosLosResponsablesFRANCOINI1: TTimeField;
+    qTodosLosResponsablesFRANCOINI2: TTimeField;
     qTodosLosResponsablesHORARIO1FIN: TTimeField;
+    qTodosLosResponsablesHORARIO1FIN1: TTimeField;
+    qTodosLosResponsablesHORARIO1FIN2: TTimeField;
     qTodosLosResponsablesHORARIO1INI: TTimeField;
+    qTodosLosResponsablesHORARIO1INI1: TTimeField;
+    qTodosLosResponsablesHORARIO1INI2: TTimeField;
     qTodosLosResponsablesHORARIO2FIN: TTimeField;
+    qTodosLosResponsablesHORARIO2FIN1: TTimeField;
+    qTodosLosResponsablesHORARIO2FIN2: TTimeField;
     qTodosLosResponsablesHORARIO2INI: TTimeField;
+    qTodosLosResponsablesHORARIO2INI1: TTimeField;
+    qTodosLosResponsablesHORARIO2INI2: TTimeField;
     qTodosLosResponsablesIDRESPONSABLE: TStringField;
+    qTodosLosResponsablesIDRESPONSABLE1: TStringField;
+    qTodosLosResponsablesIDRESPONSABLE2: TStringField;
     qTodosLosResponsablesLEGAJO: TLongintField;
+    qTodosLosResponsablesLEGAJO1: TLongintField;
+    qTodosLosResponsablesLEGAJO2: TLongintField;
     qTodosLosResponsablesREFFOTO: TStringField;
+    qTodosLosResponsablesREFFOTO1: TStringField;
+    qTodosLosResponsablesREFFOTO2: TStringField;
     qTodosLosResponsablesREFGRUPO: TLongintField;
+    qTodosLosResponsablesREFGRUPO1: TLongintField;
+    qTodosLosResponsablesREFGRUPO2: TLongintField;
     qTodosLosResponsablesREFTIPODOC: TLongintField;
+    qTodosLosResponsablesREFTIPODOC1: TLongintField;
+    qTodosLosResponsablesREFTIPODOC2: TLongintField;
     qTodosLosResponsablesTARJETADIGITO: TLongintField;
+    qTodosLosResponsablesTARJETADIGITO1: TLongintField;
+    qTodosLosResponsablesTARJETADIGITO2: TLongintField;
     qTodosLosResponsablesTARJETALEGAJO: TLongintField;
+    qTodosLosResponsablesTARJETALEGAJO1: TLongintField;
+    qTodosLosResponsablesTARJETALEGAJO2: TLongintField;
     qTodosLosResponsablesTXNOTAS: TMemoField;
+    qTodosLosResponsablesTXNOTAS1: TMemoField;
+    qTodosLosResponsablesTXNOTAS2: TMemoField;
     tbResponsablebVisible: TLongintField;
     tbResponsablecApellidos: TStringField;
     tbResponsablecNombres: TStringField;
@@ -130,8 +170,13 @@ type
     procedure DataModuleCreate(Sender: TObject);
     procedure tbResponsableAfterInsert(DataSet: TDataSet);
   private
+    function getApyNomResponsableActual: string;
+    function getIdResponsableActual: GUID_ID;
     { private declarations }
   public
+    property idResponsableActual: GUID_ID read getIdResponsableActual;
+    property ApyNomResponsableActual: string read getApyNomResponsableActual;
+
     procedure ObtenerTodosLosResponsables;
     function SeleccionTodosLosResponsables: GUID_ID;
 
@@ -145,6 +190,10 @@ type
     function BuscarResponsableCB(elCodigo: string): boolean;
 
     procedure Inicializar;
+
+    procedure BuscarResponsableApellido (elApellido: string);
+    procedure BuscarResponsableLegajo (elLegajo: integer);
+
   end;
 
 var
@@ -166,6 +215,26 @@ begin
     tbResponsablerefGrupo.asInteger:= 1;
     tbResponsabletarjetaDigito.asInteger:= 1;
   end;
+end;
+
+function TDM_Responsables.getApyNomResponsableActual: string;
+begin
+  with tbResponsable do
+    if RecordCount > 0 then
+      Result:= tbResponsablecApellidos.asString + ' ' +tbResponsablecNombres.asString
+    else
+      Result:= EmptyStr;
+end;
+
+function TDM_Responsables.getIdResponsableActual: GUID_ID;
+begin
+  with tbResponsable do
+    begin
+      if RecordCount > 0 then
+        Result:= tbResponsableidResponsable.asString
+      else
+        Result:= GUIDNULO;
+    end;
 end;
 
 procedure TDM_Responsables.DataModuleCreate(Sender: TObject);
@@ -264,6 +333,32 @@ end;
 procedure TDM_Responsables.Inicializar;
 begin
   DM_General.ReiniciarTabla(tbResponsable);
+end;
+
+procedure TDM_Responsables.BuscarResponsableApellido(elApellido: string);
+begin
+  DM_General.ReiniciarTabla(tbResponsable);
+  with qBuscarPorApellido do
+  begin
+    if active then close;
+    ParamByName('cApellidos').asString:= elApellido;
+    Open;
+    tbResponsable.LoadFromDataSet(qBuscarPorApellido, 0, lmAppend);
+    close;
+  end;
+end;
+
+procedure TDM_Responsables.BuscarResponsableLegajo(elLegajo: integer);
+begin
+  DM_General.ReiniciarTabla(tbResponsable);
+  with qBuscarPorLegajos do
+  begin
+    if active then close;
+    ParamByName('legajo').asInteger:= elLegajo;
+    Open;
+    tbResponsable.LoadFromDataSet(qBuscarPorLegajos, 0, lmAppend);
+    close;
+  end;
 end;
 
 end.

@@ -14,9 +14,7 @@ type
   { TfrmListadoEsterilizar }
 
   TfrmListadoEsterilizar = class(TForm)
-    btnAlumnoBuscar: TBitBtn;
     btnObtenerDatos: TBitBtn;
-    btnRespBuscar: TBitBtn;
     btnSalir: TBitBtn;
     btnImprimir: TBitBtn;
     ds_historico: TDatasource;
@@ -52,14 +50,14 @@ type
     rgEstado: TRadioGroup;
     procedure btnImprimirClick(Sender: TObject);
     procedure btnObtenerDatosClick(Sender: TObject);
-    procedure btnAlumnoBuscarClick(Sender: TObject);
-    procedure btnRespBuscarClick(Sender: TObject);
     procedure btnSalirClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure GroupBox3Click(Sender: TObject);
+    procedure rbAlumnIndividualChange(Sender: TObject);
     procedure rbAlumnTodosClick(Sender: TObject);
+    procedure rbRespIndividualChange(Sender: TObject);
     procedure rbRespTodosClick(Sender: TObject);
   private
     idAlumno: GUID_ID;
@@ -77,7 +75,7 @@ implementation
 
 uses
   dateutils
-  ,frm_listadoalumnos
+  ,frm_busquedapersona
   ,frm_ListadoResponsables
   ,dmesterilizacion
   ;
@@ -121,6 +119,8 @@ begin
   lbAlumno.Caption:= '-----------------';
 end;
 
+
+
 procedure TfrmListadoEsterilizar.rbRespTodosClick(Sender: TObject);
 begin
   idResponsable:= GUIDNULO;
@@ -152,25 +152,32 @@ end;
 **** Búsqueda de alumnos
 *******************************************************************************)
 
-procedure TfrmListadoEsterilizar.btnAlumnoBuscarClick(Sender: TObject);
+procedure TfrmListadoEsterilizar.rbAlumnIndividualChange(Sender: TObject);
 var
-  pant: TfrmListadoAlumnos;
+ pant: TfrmBuscarPersonas;
 begin
-  lbAlumno.Caption:= EmptyStr;
-  pant:= TfrmListadoAlumnos.Create (self);
-  try
-    if pant.ShowModal = mrOK then
-    begin
-      idAlumno:= pant.idAlumnoSeleccionado;
-      lbAlumno.Caption:= pant.ApyNomAlumnoSeleccionado;
-    end
-    else
-    begin
-     idAlumno:= GUIDNULO;
-     lbAlumno.Caption:= EmptyStr;
+  if rbAlumnIndividual.Checked then
+  begin
+    lbAlumno.Caption:= EmptyStr;
+    pant:= TfrmBuscarPersonas.Create (self);
+    pant.TipoPersona:= PER_MATERIAL;
+    try
+      if pant.ShowModal = mrOK then
+      begin
+        idAlumno:= pant.idPersona;
+        lbAlumno.Caption:= pant.ApyNomPersona;
+      end
+      else
+      begin
+       idAlumno:= GUIDNULO;
+       lbAlumno.Caption:= EmptyStr;
+      end;
+
+      if idAlumno = GUIDNULO then
+        rbAlumnTodos.Checked:= True;
+    finally
+      pant.free;
     end;
-  finally
-    pant.free;
   end;
 end;
 
@@ -178,26 +185,35 @@ end;
 (*******************************************************************************
 **** Búsqueda de responsables
 *******************************************************************************)
-procedure TfrmListadoEsterilizar.btnRespBuscarClick(Sender: TObject);
+
+procedure TfrmListadoEsterilizar.rbRespIndividualChange(Sender: TObject);
 var
-  pant: TfrmListadoResponsables;
+  pant: TfrmBuscarPersonas;
 begin
-  pant:= TfrmListadoResponsables.Create(self);
-  try
-    if pant.ShowModal = mrOK then
-    begin
-      idResponsable:= pant.idResponsableSeleccionado;
-      lbResponsable.Caption:= pant.ApyNomResponsableSelecciondo;
-    end
-    else
-    begin
-      idResponsable:= GUIDNULO;
-      lbResponsable.Caption:= EmptyStr;
+  if rbRespIndividual.Checked then
+  begin
+    lbResponsable.Caption:= EmptyStr;
+    pant:= TfrmBuscarPersonas.Create (self);
+    pant.TipoPersona:= PER_RESPONSABLE;
+    try
+      if pant.ShowModal = mrOK then
+      begin
+        idResponsable:= pant.idPersona;
+        lbResponsable.Caption:= pant.ApyNomPersona;
+      end
+      else
+      begin
+        idResponsable:= GUIDNULO;
+        lbResponsable.Caption:= EmptyStr;
+      end;
+
+      if idResponsable = GUIDNULO then
+       rbRespTodos.Checked:= true;
+    finally
     end;
-  finally
+
   end;
 end;
-
 
 (*******************************************************************************
 **** Obtener Parámetros

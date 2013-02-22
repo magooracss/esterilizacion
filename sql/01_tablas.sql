@@ -186,3 +186,28 @@ INSERT INTO tugGruposResponsables
 (idGrupoResponsable, GrupoResponsable, bVisible)
 VALUES
 (3, 'Control',1);
+
+CREATE TABLE tbInventario
+(
+   idInventario   int 		DEFAULT -1
+ , Codigo		  varchar (100) 
+ , Descripcion    varchar(1000)
+ , Estado         varchar(1)
+ , CodigoDeBarras varchar(30)
+ , bVisible       smallint 	DEFAULT 1
+);
+
+CREATE GENERATOR GenInventario;
+SET GENERATOR GenInventario TO 0;
+
+SET TERM ^ ;
+
+CREATE TRIGGER idtbInventario FOR tbInventario
+BEFORE INSERT POSITION 0
+AS 
+BEGIN 
+    If (New.idInventario = -1) then
+   New.idInventario = GEN_ID(GenInventario,1);
+END^
+
+SET TERM ; ^

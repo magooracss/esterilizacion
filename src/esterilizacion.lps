@@ -4,15 +4,15 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="43">
+    <Units Count="46">
       <Unit0>
         <Filename Value="esterilizacion.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="esterilizacion"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="11"/>
-        <CursorPos X="1" Y="37"/>
-        <UsageCount Value="118"/>
+        <TopLine Value="12"/>
+        <CursorPos X="50" Y="31"/>
+        <UsageCount Value="123"/>
       </Unit0>
       <Unit1>
         <Filename Value="frm_principal.pas"/>
@@ -24,7 +24,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="186"/>
         <CursorPos X="33" Y="193"/>
-        <UsageCount Value="118"/>
+        <UsageCount Value="123"/>
       </Unit1>
       <Unit2>
         <Filename Value="dmgeneral.pas"/>
@@ -36,7 +36,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="45"/>
         <CursorPos X="38" Y="52"/>
-        <UsageCount Value="118"/>
+        <UsageCount Value="123"/>
       </Unit2>
       <Unit3>
         <Filename Value="frm_listadoalumnos.pas"/>
@@ -48,7 +48,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="98"/>
         <CursorPos X="80" Y="105"/>
-        <UsageCount Value="118"/>
+        <UsageCount Value="123"/>
       </Unit3>
       <Unit4>
         <Filename Value="dmalumnos.pas"/>
@@ -57,13 +57,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="dmalumnos"/>
-        <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="179"/>
-        <CursorPos X="42" Y="195"/>
-        <UsageCount Value="118"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <TopLine Value="218"/>
+        <CursorPos X="20" Y="218"/>
+        <UsageCount Value="123"/>
       </Unit4>
       <Unit5>
         <Filename Value="dmconexion.pas"/>
@@ -75,7 +72,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="25"/>
         <CursorPos X="55" Y="27"/>
-        <UsageCount Value="118"/>
+        <UsageCount Value="123"/>
       </Unit5>
       <Unit6>
         <Filename Value="frm_alumnoae.pas"/>
@@ -87,7 +84,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="119"/>
         <CursorPos X="26" Y="142"/>
-        <UsageCount Value="116"/>
+        <UsageCount Value="121"/>
       </Unit6>
       <Unit7>
         <Filename Value="dmfotos.pas"/>
@@ -99,7 +96,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="41"/>
         <CursorPos X="49" Y="74"/>
-        <UsageCount Value="115"/>
+        <UsageCount Value="120"/>
       </Unit7>
       <Unit8>
         <Filename Value="frm_listadoresponsables.pas"/>
@@ -111,7 +108,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="49"/>
         <CursorPos X="30" Y="49"/>
-        <UsageCount Value="109"/>
+        <UsageCount Value="114"/>
       </Unit8>
       <Unit9>
         <Filename Value="dmresponsables.pas"/>
@@ -121,9 +118,9 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="dmresponsables"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="235"/>
-        <CursorPos X="83" Y="246"/>
-        <UsageCount Value="109"/>
+        <TopLine Value="227"/>
+        <CursorPos X="81" Y="241"/>
+        <UsageCount Value="114"/>
       </Unit9>
       <Unit10>
         <Filename Value="frm_responsableae.pas"/>
@@ -135,7 +132,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="56"/>
         <CursorPos X="113" Y="70"/>
-        <UsageCount Value="109"/>
+        <UsageCount Value="114"/>
       </Unit10>
       <Unit11>
         <Filename Value="frm_ingresoesterilizar.pas"/>
@@ -147,7 +144,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="100"/>
         <CursorPos X="39" Y="124"/>
-        <UsageCount Value="107"/>
+        <UsageCount Value="112"/>
       </Unit11>
       <Unit12>
         <Filename Value="balanza.pas"/>
@@ -156,7 +153,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="30"/>
         <CursorPos X="8" Y="56"/>
-        <UsageCount Value="105"/>
+        <UsageCount Value="110"/>
       </Unit12>
       <Unit13>
         <Filename Value="dmesterilizacion.pas"/>
@@ -168,7 +165,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="341"/>
         <CursorPos X="60" Y="565"/>
-        <UsageCount Value="102"/>
+        <UsageCount Value="107"/>
         <Bookmarks Count="1">
           <Item0 X="1" Y="357" ID="1"/>
         </Bookmarks>
@@ -183,7 +180,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="41"/>
         <CursorPos X="5" Y="35"/>
-        <UsageCount Value="79"/>
+        <UsageCount Value="84"/>
       </Unit14>
       <Unit15>
         <Filename Value="dmvalidar.pas"/>
@@ -195,7 +192,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="323"/>
         <CursorPos X="51" Y="336"/>
-        <UsageCount Value="79"/>
+        <UsageCount Value="84"/>
         <Bookmarks Count="1">
           <Item0 X="1" Y="185" ID="9"/>
         </Bookmarks>
@@ -210,7 +207,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="253"/>
         <CursorPos X="51" Y="269"/>
-        <UsageCount Value="75"/>
+        <UsageCount Value="80"/>
       </Unit16>
       <Unit17>
         <Filename Value="frm_listadosesterilizar.pas"/>
@@ -219,14 +216,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frm_listadosesterilizar"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="124"/>
-        <CursorPos X="76" Y="171"/>
-        <UsageCount Value="69"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <TopLine Value="171"/>
+        <CursorPos X="87" Y="191"/>
+        <UsageCount Value="74"/>
+        <Bookmarks Count="2">
+          <Item0 X="1" Y="155" ID="2"/>
+          <Item1 X="1" Y="174" ID="1"/>
+        </Bookmarks>
       </Unit17>
       <Unit18>
         <Filename Value="frm_permisosae.pas"/>
@@ -238,217 +235,246 @@
         <WindowIndex Value="0"/>
         <TopLine Value="80"/>
         <CursorPos X="19" Y="102"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="43"/>
       </Unit18>
       <Unit19>
+        <Filename Value="frm_busquedapersona.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBuscarPersonas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_busquedapersona"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="76"/>
+        <CursorPos X="71" Y="87"/>
+        <UsageCount Value="25"/>
+      </Unit19>
+      <Unit20>
         <Filename Value="C:\lazarus\components\rxfpc\rxdbgrid.pas"/>
         <UnitName Value="rxdbgrid"/>
         <WindowIndex Value="0"/>
         <TopLine Value="51"/>
         <CursorPos X="48" Y="65"/>
         <UsageCount Value="1"/>
-      </Unit19>
-      <Unit20>
+      </Unit20>
+      <Unit21>
         <Filename Value="C:\lazarus\components\rxfpc\rxlookup.pas"/>
         <UnitName Value="rxlookup"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1252"/>
         <CursorPos X="5" Y="1266"/>
         <UsageCount Value="1"/>
-      </Unit20>
-      <Unit21>
+      </Unit21>
+      <Unit22>
         <Filename Value="C:\lazarus\components\rxfpc\curredit.pas"/>
         <UnitName Value="curredit"/>
         <WindowIndex Value="0"/>
         <TopLine Value="483"/>
         <CursorPos X="5" Y="502"/>
         <UsageCount Value="1"/>
-      </Unit21>
-      <Unit22>
+      </Unit22>
+      <Unit23>
         <Filename Value="C:\lazarus\components\rxfpc\dbdateedit.pas"/>
         <UnitName Value="dbdateedit"/>
         <WindowIndex Value="0"/>
         <TopLine Value="357"/>
         <CursorPos X="5" Y="373"/>
         <UsageCount Value="1"/>
-      </Unit22>
-      <Unit23>
+      </Unit23>
+      <Unit24>
         <Filename Value="C:\lazarus\components\rxfpc\rxdbcomb.pas"/>
         <UnitName Value="rxdbcomb"/>
         <WindowIndex Value="0"/>
         <TopLine Value="96"/>
         <CursorPos X="3" Y="108"/>
         <UsageCount Value="1"/>
-      </Unit23>
-      <Unit24>
+      </Unit24>
+      <Unit25>
         <Filename Value="C:\lazarus\components\rxfpc\rxtoolbar.pas"/>
         <UnitName Value="rxtoolbar"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1004"/>
         <CursorPos X="39" Y="1020"/>
         <UsageCount Value="1"/>
-      </Unit24>
-      <Unit25>
+      </Unit25>
+      <Unit26>
         <Filename Value="C:\lazarus\lcl\controls.pp"/>
         <UnitName Value="Controls"/>
         <WindowIndex Value="0"/>
         <TopLine Value="35"/>
         <CursorPos X="3" Y="51"/>
         <UsageCount Value="9"/>
-      </Unit25>
-      <Unit26>
+      </Unit26>
+      <Unit27>
         <Filename Value="C:\lazarus\components\rxfpc\rxctrls.pas"/>
         <UnitName Value="rxctrls"/>
         <WindowIndex Value="0"/>
         <TopLine Value="3359"/>
         <CursorPos X="5" Y="3364"/>
         <UsageCount Value="1"/>
-      </Unit26>
-      <Unit27>
+      </Unit27>
+      <Unit28>
         <Filename Value="C:\lazarus\lcl\include\lclintfh.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="60"/>
         <CursorPos X="1" Y="73"/>
         <UsageCount Value="1"/>
-      </Unit27>
-      <Unit28>
+      </Unit28>
+      <Unit29>
         <Filename Value="C:\lazarus\components\rxfpc\rxlogin.pas"/>
         <UnitName Value="rxlogin"/>
         <WindowIndex Value="0"/>
         <TopLine Value="434"/>
         <CursorPos X="54" Y="449"/>
         <UsageCount Value="1"/>
-      </Unit28>
-      <Unit29>
+      </Unit29>
+      <Unit30>
         <Filename Value="C:\lazarus\components\rxfpc\autopanel.pas"/>
         <UnitName Value="AutoPanel"/>
         <WindowIndex Value="0"/>
         <TopLine Value="46"/>
         <CursorPos X="35" Y="63"/>
         <UsageCount Value="1"/>
-      </Unit29>
-      <Unit30>
+      </Unit30>
+      <Unit31>
         <Filename Value="C:\lazarus\lcl\include\dbimage.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="67"/>
         <CursorPos X="27" Y="92"/>
         <UsageCount Value="4"/>
-      </Unit30>
-      <Unit31>
+      </Unit31>
+      <Unit32>
         <Filename Value="C:\lazarus\fpc\2.6.0\source\packages\pasjpeg\src\jpeglib.pas"/>
         <UnitName Value="JPEGLib"/>
         <WindowIndex Value="0"/>
         <TopLine Value="454"/>
         <CursorPos X="1" Y="1"/>
         <UsageCount Value="3"/>
-      </Unit31>
-      <Unit32>
+      </Unit32>
+      <Unit33>
         <Filename Value="C:\lazarus\components\rackctls\RackCtls.pas"/>
         <UnitName Value="RackCtls"/>
         <WindowIndex Value="0"/>
         <TopLine Value="869"/>
         <CursorPos X="88" Y="873"/>
         <UsageCount Value="2"/>
-      </Unit32>
-      <Unit33>
+      </Unit33>
+      <Unit34>
         <Filename Value="SD_Configuracion.pas"/>
         <UnitName Value="SD_Configuracion"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="3" Y="26"/>
         <UsageCount Value="18"/>
-      </Unit33>
-      <Unit34>
+      </Unit34>
+      <Unit35>
         <Filename Value="C:\lazarus\components\lazreport\source\lr_class.pas"/>
         <UnitName Value="LR_Class"/>
         <WindowIndex Value="0"/>
         <TopLine Value="5784"/>
         <CursorPos X="3" Y="5791"/>
         <UsageCount Value="13"/>
-      </Unit34>
-      <Unit35>
+      </Unit35>
+      <Unit36>
         <Filename Value="C:\lazarus\lcl\printers.pas"/>
         <UnitName Value="Printers"/>
         <WindowIndex Value="0"/>
         <TopLine Value="23"/>
         <CursorPos X="3" Y="36"/>
         <UsageCount Value="13"/>
-      </Unit35>
-      <Unit36>
+      </Unit36>
+      <Unit37>
         <Filename Value="C:\lazarus\components\lazreport\source\lr_prntr.pas"/>
         <UnitName Value="LR_Prntr"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1085"/>
         <CursorPos X="27" Y="1034"/>
         <UsageCount Value="12"/>
-      </Unit36>
-      <Unit37>
+      </Unit37>
+      <Unit38>
         <Filename Value="C:\lazarus\lcl\forms.pp"/>
         <UnitName Value="Forms"/>
         <WindowIndex Value="0"/>
         <TopLine Value="347"/>
         <CursorPos X="12" Y="369"/>
         <UsageCount Value="6"/>
-      </Unit37>
-      <Unit38>
+      </Unit38>
+      <Unit39>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="957"/>
         <CursorPos X="1" Y="971"/>
         <UsageCount Value="6"/>
-      </Unit38>
-      <Unit39>
+      </Unit39>
+      <Unit40>
         <Filename Value="C:\lazarus\fpc\2.6.0\source\packages\fcl-db\src\base\db.pas"/>
         <UnitName Value="db"/>
         <WindowIndex Value="0"/>
         <TopLine Value="40"/>
         <CursorPos X="48" Y="49"/>
         <UsageCount Value="7"/>
-      </Unit39>
-      <Unit40>
+      </Unit40>
+      <Unit41>
         <Filename Value="C:\lazarus\lcl\lresources.pp"/>
         <UnitName Value="LResources"/>
         <WindowIndex Value="0"/>
         <TopLine Value="3935"/>
         <CursorPos X="44" Y="3950"/>
         <UsageCount Value="7"/>
-      </Unit40>
-      <Unit41>
+      </Unit41>
+      <Unit42>
         <Filename Value="frm_listadosesterilizar.lfm"/>
         <WindowIndex Value="0"/>
         <TopLine Value="187"/>
         <CursorPos X="1" Y="1"/>
         <UsageCount Value="7"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit41>
-      <Unit42>
+      </Unit42>
+      <Unit43>
         <Filename Value="C:\lazarus\fpc\2.6.0\source\rtl\objpas\sysutils\datih.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="96"/>
         <CursorPos X="10" Y="110"/>
         <UsageCount Value="8"/>
-      </Unit42>
+      </Unit43>
+      <Unit44>
+        <Filename Value="frm_listadoinventario.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmListadoInventario"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_listadoinventario"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="dminventario.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM_Inventario"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dminventario"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit45>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="4" HistoryIndex="3">
+    <JumpHistory Count="1" HistoryIndex="0">
       <Position1>
-        <Filename Value="dmalumnos.pas"/>
-        <Caret Line="161" Column="59" TopLine="153"/>
+        <Filename Value="frm_listadoinventario.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
       </Position1>
-      <Position2>
-        <Filename Value="dmalumnos.pas"/>
-        <Caret Line="162" Column="59" TopLine="154"/>
-      </Position2>
-      <Position3>
-        <Filename Value="dmalumnos.pas"/>
-        <Caret Line="195" Column="30" TopLine="186"/>
-      </Position3>
-      <Position4>
-        <Filename Value="frm_listadosesterilizar.pas"/>
-        <Caret Line="67" Column="45" TopLine="63"/>
-      </Position4>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

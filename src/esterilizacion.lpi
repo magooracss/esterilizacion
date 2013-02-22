@@ -18,7 +18,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="1"/>
-      <BuildNr Value="34"/>
+      <BuildNr Value="35"/>
       <Language Value="040A"/>
       <StringTable CompanyName="RACSS Programacion - www.racss.com.ar" LegalCopyright="Carlos Enrique Rodriguez" LegalTrademarks="Carlos Enrique Rodriguez" ProductVersion=""/>
     </VersionInfo>
@@ -58,7 +58,7 @@
         <PackageName Value="LCL"/>
       </Item7>
     </RequiredPackages>
-    <Units Count="19">
+    <Units Count="22">
       <Unit0>
         <Filename Value="esterilizacion.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -205,6 +205,28 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frm_permisosAE"/>
       </Unit18>
+      <Unit19>
+        <Filename Value="frm_busquedapersona.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBuscarPersonas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_busquedapersona"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="frm_listadoinventario.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmListadoInventario"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frm_listadoinventario"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="dminventario.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM_Inventario"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dminventario"/>
+      </Unit21>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
