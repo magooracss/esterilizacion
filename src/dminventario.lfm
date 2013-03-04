@@ -1,7 +1,448 @@
 object DM_Inventario: TDM_Inventario
+  OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 405
-  HorizontalOffset = 385
-  VerticalOffset = 135
+  HorizontalOffset = 507
+  VerticalOffset = 170
   Width = 406
+  object tbInventario: TRxMemoryData
+    FieldDefs = <    
+      item
+        Name = 'idInventario'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'Codigo'
+        DataType = ftString
+        Precision = 0
+        Size = 400
+      end    
+      item
+        Name = 'Descripcion'
+        DataType = ftString
+        Precision = 0
+        Size = 4000
+      end    
+      item
+        Name = 'Estado'
+        DataType = ftString
+        Precision = 0
+        Size = 4
+      end    
+      item
+        Name = 'CodigoDeBarras'
+        DataType = ftString
+        Precision = 0
+        Size = 120
+      end    
+      item
+        Name = 'bVisible'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end>
+    AfterInsert = tbInventarioAfterInsert
+    left = 135
+    top = 32
+    object tbInventarioidInventario: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'idInventario'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbInventarioCodigo: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'Codigo'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object tbInventarioDescripcion: TStringField
+      DisplayWidth = 4000
+      FieldKind = fkData
+      FieldName = 'Descripcion'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4000
+    end
+    object tbInventarioEstado: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'Estado'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbInventariobVisible: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'bVisible'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbInventarioCodigoDeBarras: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CodigoDeBarras'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+  end
+  object tbInventarioINS: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'INSERT INTO tbInventario'
+      '(IDINVENTARIO, CODIGO, DESCRIPCION, ESTADO, CODIGODEBARRAS, BVISIBLE)'
+      'VALUES'
+      '(:IDINVENTARIO, :CODIGO, :DESCRIPCION, :ESTADO, :CODIGODEBARRAS, :BVISIBLE)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDINVENTARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIPCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ESTADO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGODEBARRAS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end>
+    left = 135
+    top = 160
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDINVENTARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIPCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ESTADO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGODEBARRAS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end>
+  end
+  object tbInventarioUPD: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'UPDATE  tbInventario'
+      'SET '
+      '  CODIGO = :CODIGO '
+      ', DESCRIPCION = :DESCRIPCION '
+      ', ESTADO = :ESTADO '
+      ', CODIGODEBARRAS = :CODIGODEBARRAS '
+      ', BVISIBLE = :BVISIBLE '
+      'WHERE   IDINVENTARIO = :IDINVENTARIO'
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIPCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ESTADO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGODEBARRAS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDINVENTARIO'
+        ParamType = ptUnknown
+      end>
+    left = 135
+    top = 232
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'DESCRIPCION'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ESTADO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'CODIGODEBARRAS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDINVENTARIO'
+        ParamType = ptUnknown
+      end>
+  end
+  object tbInventarioDEL: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'UPDATE  tbInventario'
+      'SET  BVISIBLE = 0'
+      'WHERE idInventario = :idInventario'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'idInventario'
+        ParamType = ptUnknown
+      end>
+    left = 135
+    top = 304
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idInventario'
+        ParamType = ptUnknown
+      end>
+  end
+  object qInventarioSEL: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbInventario'
+      'WHERE IDINVENTARIO = :idInventario'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDINVENTARIO'
+        ParamType = ptUnknown
+      end>
+    left = 135
+    top = 104
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDINVENTARIO'
+        ParamType = ptUnknown
+      end>
+    object qInventarioSELIDINVENTARIO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'IDINVENTARIO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qInventarioSELCODIGO: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'CODIGO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qInventarioSELDESCRIPCION: TStringField
+      DisplayWidth = 4000
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4000
+    end
+    object qInventarioSELESTADO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'ESTADO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qInventarioSELCODIGODEBARRAS: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODIGODEBARRAS'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qInventarioSELBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qInventarioCompleto: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbInventario'
+      'WHERE bVisible = 1'
+    )
+    Params = <>
+    left = 40
+    top = 104
+    object qInventarioCompletoIDINVENTARIO: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'IDINVENTARIO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qInventarioCompletoCODIGO: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'CODIGO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qInventarioCompletoDESCRIPCION: TStringField
+      DisplayWidth = 4000
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4000
+    end
+    object qInventarioCompletoESTADO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'ESTADO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qInventarioCompletoCODIGODEBARRAS: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODIGODEBARRAS'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qInventarioCompletoBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
 end

@@ -67,6 +67,7 @@ type
     procedure estIngresoExecute(Sender: TObject);
     procedure estReimpIngresoExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure prestInventarioExecute(Sender: TObject);
     procedure prgEditarLRFExecute(Sender: TObject);
     procedure prgSalirExecute(Sender: TObject);
     procedure prgUsuariosExecute(Sender: TObject);
@@ -98,6 +99,7 @@ uses
   ,dmvalidar
   ,frm_permisosAE
   ,dmalumnos
+  ,frm_listadoinventario
   ;
 
 { TfrmPrincipal }
@@ -128,7 +130,6 @@ begin
   Inicializar;
   AjustarSeguridad;
 end;
-
 
 
 procedure TfrmPrincipal.prgEditarLRFExecute(Sender: TObject);
@@ -225,7 +226,6 @@ procedure TfrmPrincipal.estIngresoExecute(Sender: TObject);
 var
   pant: TfrmIngresoEsterilizar;
 begin
-//  if ValidarAcceso(SEG_OPERADOR) then
   begin
     pant:= TfrmIngresoEsterilizar.Create(self);
     pant.Show;
@@ -236,7 +236,6 @@ procedure TfrmPrincipal.estReimpIngresoExecute(Sender: TObject);
 var
   elValor: string;
 begin
-//  if ValidarAcceso(SEG_ADMINISTRADOR) then
   begin
     if InputQuery('Reimpresión','Nro de Orden a reimprimir', elValor) then
       DM_Esterilizacion.reimprimirPorNroOrden(StrToIntDef(elValor,0));
@@ -258,6 +257,23 @@ begin
   pant:= TfrmListadoEsterilizar.Create(self);
   pant.Show;
 end;
+
+(*******************************************************************************
+*** Manejo de material para Inventario
+*******************************************************************************)
+procedure TfrmPrincipal.prestInventarioExecute(Sender: TObject);
+var
+  pant: TfrmListadoInventario;
+begin
+  pant:= TfrmListadoInventario.Create(self);
+  try
+    pant.ShowModal;
+  finally
+    pant.Free;
+  end;
+
+end;
+
 
 
 end.

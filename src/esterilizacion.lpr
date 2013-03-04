@@ -14,7 +14,7 @@ uses
   frm_egresoesterilizar, frm_listadosesterilizar
   { you can add units after this }
   ,controls, frm_permisosAE, frm_busquedapersona, frm_listadoinventario, 
-dminventario
+dminventario, frm_inventarioae
 ;
 {$R *.res}
 
@@ -28,6 +28,7 @@ begin
   Application.CreateForm(TDM_Responsables, DM_Responsables);
   Application.CreateForm(TDM_Esterilizacion, DM_Esterilizacion);
   Application.CreateForm(TDM_Validar, DM_Validar);
+  Application.CreateForm(TDM_Inventario, DM_Inventario);
 
   frmValidacion := TfrmValidacion.Create(nil);
   if frmValidacion.ShowModal <> mrOK then
@@ -36,8 +37,6 @@ begin
   frmValidacion.Free;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TfrmBuscarPersonas, frmBuscarPersonas);
-  Application.CreateForm(TfrmListadoInventario, frmListadoInventario);
-  Application.CreateForm(TDM_Inventario, DM_Inventario);
   Application.Run;
 end.
 

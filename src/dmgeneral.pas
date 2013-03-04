@@ -323,7 +323,9 @@ begin
  begin
    if BuscarId.Active then
     BuscarID.Close;
-   BuscarID.ParamByName(campoId).AsString:= TRIM(Datos.fieldByName (campoId).asString);
+
+   BuscarID.ParamByName(campoId).AsString:= TRIM(Datos.fieldByName (campoId).AsString);
+
    BuscarID.Open;
 
    if (BuscarID.RecordCount > 0) then
