@@ -17,6 +17,7 @@ uses
 const
   _REP_TICKET = 'ticket.lrf';
   _REP_ETIQUETA = 'etiqueta.lrf';
+  _REP_ETIQUETA_INV = 'etiquetainv.lrf';
 
 type
   GUID_ID = string[38];

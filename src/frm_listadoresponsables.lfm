@@ -14,7 +14,7 @@ object frmListadoResponsables: TfrmListadoResponsables
   Font.Quality = fqDraft
   OnClose = FormClose
   OnCreate = FormCreate
-  Position = poOwnerFormCenter
+  Position = poDesktopCenter
   ShowHint = True
   ShowInTaskBar = stNever
   LCLVersion = '1.0.4.0'

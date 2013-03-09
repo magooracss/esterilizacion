@@ -1,26 +1,27 @@
 object frmListadoEsterilizar: TfrmListadoEsterilizar
-  Left = 5
+  Left = 161
   Height = 440
-  Top = 198
-  Width = 1369
+  Top = 207
+  Width = 1026
   Caption = 'Listado Esterilizar'
   ClientHeight = 440
-  ClientWidth = 1369
+  ClientWidth = 1026
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
+  Position = poScreenCenter
   LCLVersion = '1.0.4.0'
   object Panel1: TPanel
     Left = 0
     Height = 120
     Top = 0
-    Width = 1369
+    Width = 1026
     Align = alTop
     ClientHeight = 120
-    ClientWidth = 1369
+    ClientWidth = 1026
     TabOrder = 0
     object GroupBox4: TGroupBox
-      Left = 1251
+      Left = 908
       Height = 118
       Top = 1
       Width = 117
@@ -559,12 +560,12 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
       Left = 1
       Height = 118
       Top = 1
-      Width = 375
+      Width = 351
       Align = alLeft
       BevelInner = bvLowered
       BevelWidth = 3
       ClientHeight = 118
-      ClientWidth = 375
+      ClientWidth = 351
       TabOrder = 1
       object GroupBox1: TGroupBox
         Left = 6
@@ -769,10 +770,10 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
         end
       end
       object rgEstado: TRadioGroup
-        Left = 231
+        Left = 225
         Height = 106
         Top = 6
-        Width = 138
+        Width = 120
         Align = alRight
         AutoFill = True
         Caption = 'Estado'
@@ -785,7 +786,7 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 1
         ClientHeight = 88
-        ClientWidth = 134
+        ClientWidth = 116
         ItemIndex = 0
         Items.Strings = (
           'Todos'
@@ -796,39 +797,39 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
       end
     end
     object Panel4: TPanel
-      Left = 376
+      Left = 352
       Height = 118
       Top = 1
-      Width = 464
+      Width = 271
       Align = alClient
       BevelInner = bvLowered
       BevelWidth = 3
       ClientHeight = 118
-      ClientWidth = 464
+      ClientWidth = 271
       TabOrder = 2
       object GroupBox2: TGroupBox
         Left = 6
         Height = 106
         Top = 6
-        Width = 452
+        Width = 259
         Align = alClient
         Caption = 'Alumnos-Docentes'
         ClientHeight = 88
-        ClientWidth = 448
+        ClientWidth = 255
         TabOrder = 0
         object rbAlumnTodos: TRadioButton
-          Left = 22
+          Left = 16
           Height = 17
-          Top = 14
+          Top = 43
           Width = 48
           Caption = 'Todos'
           OnClick = rbAlumnTodosClick
           TabOrder = 0
         end
         object rbAlumnIndividual: TRadioButton
-          Left = 22
+          Left = 84
           Height = 17
-          Top = 40
+          Top = 43
           Width = 79
           Caption = 'Individualizar'
           OnChange = rbAlumnIndividualChange
@@ -837,7 +838,7 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
         object lbAlumno: TLabel
           Left = 8
           Height = 16
-          Top = 63
+          Top = 67
           Width = 93
           Caption = '-----------------------'
           Font.CharSet = ANSI_CHARSET
@@ -851,9 +852,9 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
           ParentFont = False
         end
         object rbFechaTipo: TRadioGroup
-          Left = 234
+          Left = 8
           Height = 32
-          Top = -1
+          Top = 0
           Width = 208
           Anchors = [akTop, akRight]
           AutoFill = True
@@ -880,31 +881,31 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
       end
     end
     object Panel5: TPanel
-      Left = 840
+      Left = 623
       Height = 118
       Top = 1
-      Width = 411
+      Width = 285
       Align = alRight
       BevelInner = bvLowered
       BevelWidth = 3
       ClientHeight = 118
-      ClientWidth = 411
+      ClientWidth = 285
       TabOrder = 3
       object GroupBox3: TGroupBox
-        Left = 3
+        Left = 12
         Height = 106
         Top = 6
-        Width = 402
+        Width = 267
         Align = alRight
         Caption = 'Responsables'
         ClientHeight = 88
-        ClientWidth = 398
+        ClientWidth = 263
         TabOrder = 0
         OnClick = GroupBox3Click
         object rbRespTodos: TRadioButton
-          Left = 14
+          Left = 20
           Height = 17
-          Top = 14
+          Top = 43
           Width = 48
           Caption = 'Todos'
           Checked = True
@@ -913,9 +914,9 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
           TabStop = True
         end
         object rbRespTipo: TRadioGroup
-          Left = 185
+          Left = 11
           Height = 35
-          Top = -9
+          Top = 1
           Width = 209
           Anchors = [akTop, akRight]
           AutoFill = True
@@ -940,18 +941,18 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
           TabOrder = 0
         end
         object rbRespIndividual: TRadioButton
-          Left = 14
+          Left = 89
           Height = 17
-          Top = 42
+          Top = 43
           Width = 79
           Caption = 'Individualizar'
           OnChange = rbRespIndividualChange
           TabOrder = 2
         end
         object lbResponsable: TLabel
-          Left = 8
+          Left = 12
           Height = 16
-          Top = 63
+          Top = 67
           Width = 93
           Caption = '-----------------------'
           Font.CharSet = ANSI_CHARSET
@@ -971,10 +972,10 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
     Left = 0
     Height = 104
     Top = 336
-    Width = 1369
+    Width = 1026
     Align = alBottom
     ClientHeight = 104
-    ClientWidth = 1369
+    ClientWidth = 1026
     TabOrder = 1
     object btnSalir: TBitBtn
       Left = 32
@@ -1503,7 +1504,7 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
       TabOrder = 0
     end
     object btnImprimir: TBitBtn
-      Left = 1219
+      Left = 876
       Height = 90
       Top = 6
       Width = 104
@@ -2032,7 +2033,7 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
     object edRegistros: TEdit
       Left = 384
       Height = 30
-      Top = 66
+      Top = 56
       Width = 152
       Alignment = taRightJustify
       Color = clTeal
@@ -2050,7 +2051,7 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
     object Label3: TLabel
       Left = 388
       Height = 20
-      Top = 48
+      Top = 38
       Width = 128
       Caption = 'Cantidad de filas'
       Font.CharSet = ANSI_CHARSET
@@ -2068,7 +2069,7 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
     Left = 0
     Height = 216
     Top = 120
-    Width = 1369
+    Width = 1026
     Align = alClient
     AutoFillColumns = True
     Color = clWindow
@@ -2083,7 +2084,7 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
       item
         Title.Alignment = taCenter
         Title.Caption = 'Alumno'
-        Width = 194
+        Width = 108
         FieldName = 'Alumno'
       end    
       item
@@ -2110,7 +2111,7 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
       item
         Title.Alignment = taCenter
         Title.Caption = 'Responsable Ingr'
-        Width = 194
+        Width = 108
         FieldName = 'Ing_Responsable'
       end    
       item
@@ -2137,13 +2138,13 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
       item
         Title.Alignment = taCenter
         Title.Caption = 'Responsable Egr'
-        Width = 194
+        Width = 108
         FieldName = 'Egr_Responsable'
       end    
       item
         Title.Alignment = taCenter
         Title.Caption = 'Reimpresión'
-        Width = 195
+        Width = 110
         FieldName = 'Reimp_Responsable'
       end>
     DataSource = ds_historico

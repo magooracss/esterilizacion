@@ -87,6 +87,7 @@ uses
   ,balanza
   ,dmresponsables
   ,dmesterilizacion
+  ,frm_actualizardatos
   ;
 
 { TfrmIngresoEsterilizar }
@@ -193,14 +194,22 @@ begin
 end;
 
 procedure TfrmIngresoEsterilizar.BuscarAlumno(codBarra: string);
+var
+  pant: TfrmActualizarDatos;
 begin
+  pant:= TfrmActualizarDatos.Create(self);
   if dm_alumnos.BuscarAlumnoCB (TRIM(codBarra)) then
+  begin
+    if NOT dm_alumnos.camposObligatoriosCompletos then
+       pant.ShowModal;
     edTarjetaResponsable.SetFocus
+  end
   else
   begin
    ShowMessage('Problemas al buscar el alumno en la Base de Datos');
    edTarjetaAlumno.SetFocus;
-  end
+  end;
+  pant.Free;
 end;
 
 (*******************************************************************************

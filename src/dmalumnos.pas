@@ -195,6 +195,8 @@ type
     procedure BuscarPersonaLegajo (elLegajo: integer);
 
     procedure inicializar;
+
+    function camposObligatoriosCompletos: boolean;
   end;
 
 var
@@ -381,6 +383,13 @@ end;
 procedure Tdm_alumnos.inicializar;
 begin
   DM_General.ReiniciarTabla(tbAlumnos);
+end;
+
+function Tdm_alumnos.camposObligatoriosCompletos: boolean;
+begin
+  Result:= ((TRIM(tbAlumnosDireccion.AsString) <> EmptyStr)
+            AND (TRIM(tbAlumnosTelefono.AsString) <> EmptyStr)
+           );
 end;
 
 end.

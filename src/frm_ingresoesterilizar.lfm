@@ -2,11 +2,11 @@ object frmIngresoEsterilizar: TfrmIngresoEsterilizar
   Left = 287
   Height = 580
   Top = 152
-  Width = 761
+  Width = 667
   BorderIcons = [biMinimize, biMaximize]
   Caption = 'Ingreso para Esterilizar'
   ClientHeight = 580
-  ClientWidth = 761
+  ClientWidth = 667
   Font.CharSet = ANSI_CHARSET
   Font.Color = clBlack
   Font.Height = -13
@@ -16,17 +16,17 @@ object frmIngresoEsterilizar: TfrmIngresoEsterilizar
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  Position = poOwnerFormCenter
+  Position = poScreenCenter
   LCLVersion = '1.0.4.0'
   object gbAlumno: TGroupBox
     Left = 0
     Height = 97
     Top = 0
-    Width = 761
+    Width = 667
     Align = alTop
     Caption = 'Alumno'
     ClientHeight = 79
-    ClientWidth = 757
+    ClientWidth = 663
     ParentColor = False
     TabOrder = 0
     object edTarjetaAlumno: TEdit
@@ -97,7 +97,7 @@ object frmIngresoEsterilizar: TfrmIngresoEsterilizar
       ParentFont = False
     end
     object DBMemo1: TDBMemo
-      Left = 552
+      Left = 458
       Height = 79
       Top = 0
       Width = 205
@@ -118,11 +118,11 @@ object frmIngresoEsterilizar: TfrmIngresoEsterilizar
     Left = 0
     Height = 288
     Top = 192
-    Width = 761
+    Width = 667
     Align = alClient
     Caption = 'Ingreso de material'
     ClientHeight = 270
-    ClientWidth = 757
+    ClientWidth = 663
     TabOrder = 2
     object Panel2: TPanel
       Left = 0
@@ -759,16 +759,16 @@ object frmIngresoEsterilizar: TfrmIngresoEsterilizar
       Left = 502
       Height = 270
       Top = 0
-      Width = 255
+      Width = 161
       Align = alClient
       ClientHeight = 270
-      ClientWidth = 255
+      ClientWidth = 161
       TabOrder = 1
       object Label2: TLabel
         Left = 1
         Height = 17
         Top = 1
-        Width = 253
+        Width = 159
         Align = alTop
         Caption = 'Notas sobre la entrega'
         ParentColor = False
@@ -777,7 +777,7 @@ object frmIngresoEsterilizar: TfrmIngresoEsterilizar
         Left = 1
         Height = 251
         Top = 18
-        Width = 253
+        Width = 159
         Align = alClient
         TabOrder = 0
       end
@@ -787,11 +787,11 @@ object frmIngresoEsterilizar: TfrmIngresoEsterilizar
     Left = 0
     Height = 95
     Top = 97
-    Width = 761
+    Width = 667
     Align = alTop
     Caption = 'Responsable'
     ClientHeight = 77
-    ClientWidth = 757
+    ClientWidth = 663
     TabOrder = 1
     object edTarjetaResponsable: TEdit
       Left = 7
@@ -865,10 +865,10 @@ object frmIngresoEsterilizar: TfrmIngresoEsterilizar
     Left = 0
     Height = 100
     Top = 480
-    Width = 761
+    Width = 667
     Align = alBottom
     ClientHeight = 100
-    ClientWidth = 761
+    ClientWidth = 667
     TabOrder = 3
     object btnSalir: TBitBtn
       Left = 16

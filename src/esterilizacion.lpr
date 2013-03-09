@@ -14,7 +14,8 @@ uses
   frm_egresoesterilizar, frm_listadosesterilizar
   { you can add units after this }
   ,controls, frm_permisosAE, frm_busquedapersona, frm_listadoinventario, 
-dminventario, frm_inventarioae
+dminventario, frm_inventarioae, frm_listadoprestamos, frm_prestasmossd, 
+frm_aviso, frm_actualizardatos
 ;
 {$R *.res}
 
@@ -36,7 +37,8 @@ begin
 
   frmValidacion.Free;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
-  Application.CreateForm(TfrmBuscarPersonas, frmBuscarPersonas);
+  Application.CreateForm(TfrmListadoPrestamos, frmListadoPrestamos);
+  frmListadoPrestamos.Show;
   Application.Run;
 end.
 

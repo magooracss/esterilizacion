@@ -4,7 +4,7 @@ object DM_Inventario: TDM_Inventario
   Height = 405
   HorizontalOffset = 507
   VerticalOffset = 170
-  Width = 406
+  Width = 521
   object tbInventario: TRxMemoryData
     FieldDefs = <    
       item
@@ -442,6 +442,885 @@ object DM_Inventario: TDM_Inventario
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
+      Required = False
+    end
+  end
+  object tbPrestamos: TRxMemoryData
+    FieldDefs = <    
+      item
+        Name = 'idPrestamo'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'refAlumno'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'refInventario'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'fEgreso'
+        DataType = ftDateTime
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'hEgreso'
+        DataType = ftDateTime
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'refRespEgreso'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'fDevuelto'
+        DataType = ftDateTime
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'hDevuelto'
+        DataType = ftDateTime
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'refRespDev'
+        DataType = ftString
+        Precision = 0
+        Size = 38
+      end    
+      item
+        Name = 'bVisible'
+        DataType = ftInteger
+        Precision = 0
+        Size = 0
+      end>
+    AfterInsert = tbPrestamosAfterInsert
+    left = 304
+    top = 32
+    object tbPrestamosidPrestamo: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'idPrestamo'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbPrestamosrefAlumno: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'refAlumno'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbPrestamosrefInventario: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'refInventario'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbPrestamosfEgreso: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'fEgreso'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbPrestamoshEgreso: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'hEgreso'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbPrestamosrefRespEgreso: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'refRespEgreso'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbPrestamosfDevuelto: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'fDevuelto'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbPrestamoshDevuelto: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'hDevuelto'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbPrestamosrefRespDev: TStringField
+      DisplayWidth = 38
+      FieldKind = fkData
+      FieldName = 'refRespDev'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 38
+    end
+    object tbPrestamosbVisible: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'bVisible'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qPrestamosActivos: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT  I.codigo'
+      '              , I.Descripcion'
+      '              , P.hEgreso'
+      '              , P.fEgreso '
+      '              , (A.cApellidos) as lxApyNomAlumnos'
+      '              , (R.cApellidos) as lxApyNomResp'
+      'FROM tbPrestamos P'
+      '          left join tbInventario I ON I.idInventario = P.refInventario'
+      '          left join tbAlumnos A ON A.idAlumno = P.refAlumno '
+      '          left join tbResponsables R ON R.idResponsable = P.refRespEgreso      '
+      'WHERE (refRespDev = ''{00000000-0000-0000-0000-000000000000}'')'
+      'ORDER By  P.hEgreso,  P.fEgreso '
+    )
+    Params = <>
+    left = 408
+    top = 88
+    object qPrestamosActivosCODIGO: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'CODIGO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qPrestamosActivosDESCRIPCION: TStringField
+      DisplayWidth = 4000
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4000
+    end
+    object qPrestamosActivosHEGRESO: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HEGRESO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qPrestamosActivosFEGRESO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FEGRESO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qPrestamosActivosLXAPYNOMALUMNOS: TStringField
+      DisplayWidth = 4008
+      FieldKind = fkData
+      FieldName = 'LXAPYNOMALUMNOS'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 4008
+    end
+    object qPrestamosActivosLXAPYNOMRESP: TStringField
+      DisplayWidth = 4008
+      FieldKind = fkData
+      FieldName = 'LXAPYNOMRESP'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 4008
+    end
+  end
+  object qArticuloCB: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbInventario'
+      'WHERE CodigoDeBarras LIKE :codigoBarras'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigoBarras'
+        ParamType = ptUnknown
+      end>
+    left = 40
+    top = 160
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigoBarras'
+        ParamType = ptUnknown
+      end>
+    object qInventarioCompletoIDINVENTARIO1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'IDINVENTARIO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qInventarioCompletoCODIGO1: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'CODIGO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qInventarioCompletoDESCRIPCION1: TStringField
+      DisplayWidth = 4000
+      FieldKind = fkData
+      FieldName = 'DESCRIPCION'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4000
+    end
+    object qInventarioCompletoESTADO1: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'ESTADO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object qInventarioCompletoCODIGODEBARRAS1: TStringField
+      DisplayWidth = 120
+      FieldKind = fkData
+      FieldName = 'CODIGODEBARRAS'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qInventarioCompletoBVISIBLE1: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object tbPrestamoINS: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'INSERT INTO tbPrestamos'
+      '(IDPRESTAMO, REFALUMNO, REFINVENTARIO, FEGRESO, HEGRESO, REFRESPEGRESO, FDEVUELTO, HDEVUELTO, REFRESPDEV, BVISIBLE)'
+      'VALUES'
+      '(:IDPRESTAMO, :REFALUMNO, :REFINVENTARIO, :FEGRESO, :HEGRESO, :REFRESPEGRESO, :FDEVUELTO, :HDEVUELTO, :REFRESPDEV, :BVISIBLE)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDPRESTAMO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFINVENTARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FDEVUELTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HDEVUELTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPDEV'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end>
+    left = 304
+    top = 168
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'IDPRESTAMO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFINVENTARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FDEVUELTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HDEVUELTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPDEV'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end>
+  end
+  object tbPrestamoUPD: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'UPDATE  tbPrestamos'
+      'SET '
+      '   REFALUMNO = :REFALUMNO'
+      ' , REFINVENTARIO = :REFINVENTARIO'
+      ', FEGRESO = :FEGRESO'
+      ', HEGRESO = :HEGRESO'
+      ', REFRESPEGRESO = :REFRESPEGRESO'
+      ', FDEVUELTO = :FDEVUELTO'
+      ', HDEVUELTO = :HDEVUELTO'
+      ', REFRESPDEV = :REFRESPDEV'
+      ', BVISIBLE = :BVISIBLE'
+      'WHERE  IDPRESTAMO = :IDPRESTAMO'
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'REFALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFINVENTARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FDEVUELTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HDEVUELTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPDEV'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDPRESTAMO'
+        ParamType = ptUnknown
+      end>
+    left = 304
+    top = 240
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'REFALUMNO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFINVENTARIO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPEGRESO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'FDEVUELTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'HDEVUELTO'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'REFRESPDEV'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'BVISIBLE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'IDPRESTAMO'
+        ParamType = ptUnknown
+      end>
+  end
+  object qPrestamoSEL: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbPrestamos'
+      'WHERE idPrestamo = :idPrestamo'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'idPrestamo'
+        ParamType = ptUnknown
+      end>
+    left = 304
+    top = 112
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idPrestamo'
+        ParamType = ptUnknown
+      end>
+    object qPrestamoSELIDPRESTAMO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDPRESTAMO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qPrestamoSELREFALUMNO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFALUMNO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qPrestamoSELREFINVENTARIO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFINVENTARIO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qPrestamoSELFEGRESO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FEGRESO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qPrestamoSELHEGRESO: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HEGRESO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qPrestamoSELREFRESPEGRESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPEGRESO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qPrestamoSELFDEVUELTO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FDEVUELTO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qPrestamoSELHDEVUELTO: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HDEVUELTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qPrestamoSELREFRESPDEV: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPDEV'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qPrestamoSELBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qBusArtPrestado: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbPrestamos'
+      'WHERE (refAlumno = :refAlumno)'
+      '               AND (refInventario = :refArticulo )'
+      '               AND (REFRESPDEV = ''{00000000-0000-0000-0000-000000000000}'' ) '
+      '               and (bVisible = 1)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'refAlumno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'refArticulo'
+        ParamType = ptUnknown
+      end>
+    left = 408
+    top = 168
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'refAlumno'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'refArticulo'
+        ParamType = ptUnknown
+      end>
+    object qBusArtPrestadoIDPRESTAMO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'IDPRESTAMO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 152
+    end
+    object qBusArtPrestadoREFALUMNO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFALUMNO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBusArtPrestadoREFINVENTARIO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFINVENTARIO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBusArtPrestadoFEGRESO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FEGRESO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusArtPrestadoHEGRESO: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HEGRESO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusArtPrestadoREFRESPEGRESO: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPEGRESO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBusArtPrestadoFDEVUELTO: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'FDEVUELTO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusArtPrestadoHDEVUELTO: TTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'HDEVUELTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qBusArtPrestadoREFRESPDEV: TStringField
+      DisplayWidth = 152
+      FieldKind = fkData
+      FieldName = 'REFRESPDEV'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 152
+    end
+    object qBusArtPrestadoBVISIBLE: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BVISIBLE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object RepEtiqueta: TfrReport
+    Dataset = frDataSet
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbPrint, pbExit]
+    DataType = dtDataSet
+    left = 408
+    top = 232
+    ReportForm = {
+      19000000
+    }
+  end
+  object frDataSet: TfrDBDataSet
+    DataSet = tbInventario
+    left = 408
+    top = 306
+  end
+  object qUItimoIDInventario: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT GEN_ID(GenInventario, 0)'
+      'FROM tbInventario'
+    )
+    Params = <>
+    left = 40
+    top = 280
+    object qUItimoIDInventarioGEN_ID: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'GEN_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
       Required = False
     end
   end

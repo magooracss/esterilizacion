@@ -2,8 +2,8 @@ object dm_alumnos: Tdm_alumnos
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 417
-  HorizontalOffset = 496
-  VerticalOffset = 116
+  HorizontalOffset = 463
+  VerticalOffset = 197
   Width = 632
   object qTodosLosAlumnos: TZQuery
     Connection = dm_conexion.cnxGeneral

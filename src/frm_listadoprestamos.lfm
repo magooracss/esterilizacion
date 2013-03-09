@@ -1,0 +1,82 @@
+object frmListadoPrestamos: TfrmListadoPrestamos
+  Left = 570
+  Height = 458
+  Top = 132
+  Width = 478
+  Align = alCustom
+  BorderIcons = []
+  Caption = 'Prestamos otorgados'
+  ClientHeight = 458
+  ClientWidth = 478
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poDefaultPosOnly
+  SessionProperties = 'Left;Top'
+  ShowHint = True
+  LCLVersion = '1.0.4.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 458
+    Top = 0
+    Width = 478
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Alignment = taCenter
+        SizePriority = 0
+        Title.Alignment = taCenter
+        Title.Caption = 'Código'
+        Width = 60
+        FieldName = 'CODIGO'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Elemento'
+        Width = 200
+        FieldName = 'DESCRIPCION'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Alumno'
+        Width = 300
+        FieldName = 'LXAPYNOMALUMNOS'
+      end    
+      item
+        SizePriority = 0
+        Title.Alignment = taCenter
+        Title.Caption = 'Fecha'
+        Width = 93
+        FieldName = 'FEGRESO'
+      end    
+      item
+        SizePriority = 0
+        Title.Alignment = taCenter
+        Title.Caption = 'Hora'
+        Width = 84
+        FieldName = 'HEGRESO'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Responsable'
+        Width = 500
+        FieldName = 'LXAPYNOMRESP'
+      end>
+    DataSource = ds_grilla
+    FixedCols = 0
+    Options = [dgTitles, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    Scrollbars = ssAutoBoth
+    TabOrder = 0
+  end
+  object ds_grilla: TDatasource
+    DataSet = DM_Inventario.qPrestamosActivos
+    left = 230
+    top = 234
+  end
+  object Timer1: TTimer
+    Interval = 60000
+    OnTimer = Timer1Timer
+    left = 93
+    top = 89
+  end
+end

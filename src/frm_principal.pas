@@ -6,13 +6,18 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  ActnList, Menus;
+  ActnList, Menus, ExtCtrls
+  , dminventario
+  ;
 
 type
 
   { TfrmPrincipal }
 
   TfrmPrincipal = class(TForm)
+    MenuItem23: TMenuItem;
+    prestListadoPrestado: TAction;
+    Image1: TImage;
     MenuItem22: TMenuItem;
     prgUsuarios: TAction;
     MenuItem21: TMenuItem;
@@ -47,7 +52,6 @@ type
     ToolButton6: TToolButton;
     ToolButton7: TToolButton;
     ToolButton8: TToolButton;
-    ToolButton9: TToolButton;
     tugResponsables: TAction;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
@@ -66,8 +70,12 @@ type
     procedure estHistoricoExecute(Sender: TObject);
     procedure estIngresoExecute(Sender: TObject);
     procedure estReimpIngresoExecute(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormShow(Sender: TObject);
+    procedure prestDevolucionExecute(Sender: TObject);
+    procedure prestIniciarExecute(Sender: TObject);
     procedure prestInventarioExecute(Sender: TObject);
+    procedure prestListadoPrestadoExecute(Sender: TObject);
     procedure prgEditarLRFExecute(Sender: TObject);
     procedure prgSalirExecute(Sender: TObject);
     procedure prgUsuariosExecute(Sender: TObject);
@@ -77,6 +85,8 @@ type
   private
     procedure Inicializar;
     procedure AjustarSeguridad;
+
+    procedure pantPrestamos (Estado: TEstado);
   public
     { public declarations }
   end;
@@ -100,6 +110,9 @@ uses
   ,frm_permisosAE
   ,dmalumnos
   ,frm_listadoinventario
+  ,SD_Configuracion
+  ,frm_listadoprestamos
+  ,frm_prestasmossd
   ;
 
 { TfrmPrincipal }
@@ -110,6 +123,9 @@ uses
 
 procedure TfrmPrincipal.prgSalirExecute(Sender: TObject);
 begin
+  EscribirDato(SECCION_APP, FRM_Y, IntToStr(self.Top));
+  EscribirDato(SECCION_APP, FRM_X, IntToStr(self.Left));
+
   Application.Terminate;
 end;
 
@@ -127,9 +143,13 @@ end;
 
 procedure TfrmPrincipal.FormShow(Sender: TObject);
 begin
+  self.top:= strToIntDef(LeerDato(SECCION_APP, FRM_Y),0);
+  self.Left:= strToIntDef(LeerDato(SECCION_APP, FRM_X),0);
   Inicializar;
   AjustarSeguridad;
 end;
+
+
 
 
 procedure TfrmPrincipal.prgEditarLRFExecute(Sender: TObject);
@@ -172,13 +192,12 @@ begin
   prgEditarLRF.Enabled:= (DM_Validar.pAplicacion = SEG_TODO);
   estReimpIngreso.Enabled:= (DM_Validar.pEstMaterial = SEG_TODO);
   estHistorico.Enabled:= ((DM_Validar.pEstHistorico = SEG_CONSULTAR) OR (DM_Validar.pEstHistorico = SEG_TODO));
-  prestIniciar.Enabled:= (DM_Validar.pArticulos = SEG_TODO);
-  prestDevolucion.Enabled:= (DM_Validar.pArticulos = SEG_TODO);
-  prestInventario.Enabled:= (DM_Validar.pArticulos = SEG_TODO);
+  prestIniciar.Enabled:= (DM_Validar.pPrestArticulos = SEG_TODO);
+  prestDevolucion.Enabled:= (DM_Validar.pPrestArticulos = SEG_TODO);
+  prestInventario.Enabled:= (DM_Validar.pPrestArticulos = SEG_TODO);
   PrestListados.Enabled:= (DM_Validar.pArticulos = SEG_TODO);
   prgUsuarios.Enabled:= (DM_Validar.pAplicacion = SEG_TODO);
 end;
-
 
 (*******************************************************************************
 *** Manejo de tablas generales
@@ -242,6 +261,12 @@ begin
   end;
 end;
 
+procedure TfrmPrincipal.FormClose(Sender: TObject; var CloseAction: TCloseAction
+  );
+begin
+
+end;
+
 procedure TfrmPrincipal.estEgresoExecute(Sender: TObject);
 var
   pant: TfrmEgresoEsterilizacion;
@@ -274,6 +299,43 @@ begin
 
 end;
 
+procedure TfrmPrincipal.prestListadoPrestadoExecute(Sender: TObject);
+var
+  pant: TfrmListadoPrestamos;
+begin
+  pant:= TfrmListadoPrestamos.Create (self);
+  pant.Show;
+end;
+
+(*******************************************************************************
+*** Prestamos
+*******************************************************************************)
+
+procedure TfrmPrincipal.pantPrestamos(Estado: TEstado);
+var
+  pant: TfrmPrestamosSD;
+begin
+  pant:= TfrmPrestamosSD.Create(self);
+  try
+    pant.estado:= Estado;
+    pant.ShowModal;
+  finally
+    pant.Free;
+    DM_Inventario.LevantarPrestamosOtorgados;
+  end;
+end;
+
+
+procedure TfrmPrincipal.prestIniciarExecute(Sender: TObject);
+begin
+  pantPrestamos (Iniciado);
+end;
+
+
+procedure TfrmPrincipal.prestDevolucionExecute(Sender: TObject);
+begin
+  pantPrestamos (Finalizado);
+end;
 
 
 end.

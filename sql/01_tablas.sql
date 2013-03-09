@@ -211,3 +211,17 @@ BEGIN
 END^
 
 SET TERM ; ^
+
+CREATE TABLE tbPrestamos
+(
+     idPrestamo	   "guid"      NOT NULL
+    , refAlumno     "guid"
+    , refInventario "guid"
+    , fEgreso       date
+    , hEgreso       time
+    , refRespEgreso "guid"
+    , fDevuelto     date
+    , hDevuelto     time
+    , refRespDev    "guid"
+    , bVisible      smallint   DEFAULT 1
+);

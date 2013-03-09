@@ -16,6 +16,7 @@ type
   TfrmListadoInventario = class(TForm)
     BitBtn1: TBitBtn;
     btnAgregar: TBitBtn;
+    btnImprimir: TBitBtn;
     btnModificar: TBitBtn;
     btnEliminar: TBitBtn;
     DS_inventario: TDatasource;
@@ -23,6 +24,7 @@ type
     Panel1: TPanel;
     procedure BitBtn1Click(Sender: TObject);
     procedure btnAgregarClick(Sender: TObject);
+    procedure btnImprimirClick(Sender: TObject);
     procedure btnModificarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
 
@@ -63,6 +65,11 @@ end;
 procedure TfrmListadoInventario.btnAgregarClick(Sender: TObject);
 begin
   AbrirPantalla(-1);
+end;
+
+procedure TfrmListadoInventario.btnImprimirClick(Sender: TObject);
+begin
+  DM_Inventario.EtiquetaArticulo;
 end;
 
 procedure TfrmListadoInventario.BitBtn1Click(Sender: TObject);

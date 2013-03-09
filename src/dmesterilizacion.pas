@@ -360,12 +360,24 @@ begin
   AssignFile(F,(LeerDato('IMPRESORAS','TICKET')));  //Puerto de la Impresora: COM1, COM2, LPT1, LPT2, etc.
   Rewrite(F);
 //  Write(F,#27#35#48); //Draft
-  Writeln(F,dm_alumnos.tbAlumnoscApellidos.AsString + ' ' + dm_alumnos.tbAlumnoscNombres.AsString);
+  Write(F,#27#70); //Letra negrita
+  Writeln(F, '     FACULTAD DE ODONTOLOGIA');
+  Writeln(F, '             UNLP ');
+  Writeln(F, '        ESTERILIZACION');
+  Writeln(F, '         ');
+  Writeln(F, '         ');
+
+  Writeln(F, '        ');
+//  Write(F,#27#35#48); //Draft
+
+  Writeln(F, 'ALUMNO: ' + dm_alumnos.tbAlumnoscApellidos.AsString + ' ' + dm_alumnos.tbAlumnoscNombres.AsString);
+  Writeln(F, 'LEGAJO:' + InttoStr(dm_alumnos.tbAlumnosnroAlumno.AsInteger));
   Writeln(F,'INGRESO: ' + DateToStr(tbEsterilizacionfechaIngreso.AsDateTime) + ' - ' + TimeToStr(tbEsterilizacionhoraIngreso.AsDateTime));
 //  Write(F,#27#33#8); //Letra negrita
   Writeln(F,'PESO: ' + FormatFloat('#0.000', tbEsterilizacionpesoIngreso.asFloat));
+  Write(F,#27#33#16);
   Writeln(F,'--------------------------------');
-  Write(F,#27#33#16); //Tama#o on
+//  Write(F,#27#33#16); //Tama#o on
   Writeln(F,'   ' + IntToStr (tbEsterilizacionnroOrden.AsInteger));
   Write(F,#27#33#0); //Tama#o off
 //  Write(F,#27#35#48); //Draft

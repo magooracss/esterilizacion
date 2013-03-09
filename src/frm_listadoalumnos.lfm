@@ -15,7 +15,7 @@ object frmListadoAlumnos: TfrmListadoAlumnos
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  Position = poOwnerFormCenter
+  Position = poDesktopCenter
   ShowHint = True
   ShowInTaskBar = stNever
   LCLVersion = '1.0.4.0'

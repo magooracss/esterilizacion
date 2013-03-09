@@ -24,6 +24,9 @@ const
   SECCION_BALANZA = 'BALANZA';
   BCOM = 'B_COM';
 
+  SECCION_PRESTAMOS = 'PRESTAMOS';
+  FRM_X = 'POS_X';
+  FRM_Y =  'POS_Y';
 
 
   function AbrirArchivo: TIniFile;
