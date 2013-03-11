@@ -3,6 +3,7 @@ object frmListadoResponsables: TfrmListadoResponsables
   Height = 482
   Top = 118
   Width = 765
+  BorderIcons = []
   Caption = 'Responsables'
   ClientHeight = 482
   ClientWidth = 765

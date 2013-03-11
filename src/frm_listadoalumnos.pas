@@ -21,11 +21,16 @@ type
     btnEliminar: TBitBtn;
     DS_Alumnos: TDatasource;
     DBGrid1: TDBGrid;
+    edBusqueda: TEdit;
+    Label1: TLabel;
     Panel1: TPanel;
+    Panel2: TPanel;
+    rgCriterioBusqueda: TRadioGroup;
     procedure btnAgregarClick(Sender: TObject);
     procedure btnEliminarClick(Sender: TObject);
     procedure btnModificarClick(Sender: TObject);
     procedure btnSalirClick(Sender: TObject);
+    procedure edBusquedaKeyPress(Sender: TObject; var Key: char);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -57,17 +62,23 @@ uses
 procedure TfrmListadoAlumnos.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
-  if NOT (fsModal in (sender as TfrmListadoAlumnos).FormState)  then //Me fijo si se abrio como modal para no destruirlo
-    CloseAction:= caFree;
+//  if NOT (fsModal in (sender as TfrmListadoAlumnos).FormState)  then //Me fijo si se abrio como modal para no destruirlo
+//    CloseAction:= caFree;
 end;
 
 procedure TfrmListadoAlumnos.btnSalirClick(Sender: TObject);
 begin
  //Dependiendo de cómo lo abro, lo cierro
-  if (fsModal in self.FormState)  then
+//  if (fsModal in self.FormState)  then
     ModalResult:= mrOK
-  else
-    close;
+//  else
+//    close;
+end;
+
+procedure TfrmListadoAlumnos.edBusquedaKeyPress(Sender: TObject; var Key: char);
+begin
+  if key = #13 then
+    dm_alumnos.Buscar (edBusqueda.Text, rgCriterioBusqueda.ItemIndex)
 end;
 
 procedure TfrmListadoAlumnos.FormCreate(Sender: TObject);

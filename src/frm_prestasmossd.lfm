@@ -3,6 +3,7 @@ object frmPrestamosSD: TfrmPrestamosSD
   Height = 420
   Top = 166
   Width = 716
+  BorderIcons = []
   Caption = 'Prestamos'
   ClientHeight = 420
   ClientWidth = 716

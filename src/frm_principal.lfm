@@ -3,6 +3,7 @@ object frmPrincipal: TfrmPrincipal
   Height = 497
   Top = 167
   Width = 544
+  BorderIcons = []
   Caption = 'Esterilización'
   ClientHeight = 477
   ClientWidth = 544

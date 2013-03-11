@@ -3,11 +3,12 @@ object frmPermisosAE: TfrmPermisosAE
   Height = 496
   Top = 121
   Width = 989
+  BorderIcons = []
   Caption = 'Permisos'
   ClientHeight = 496
   ClientWidth = 989
   OnShow = FormShow
-  Position = poOwnerFormCenter
+  Position = poScreenCenter
   LCLVersion = '1.0.4.0'
   object DBGrid1: TDBGrid
     Left = 0

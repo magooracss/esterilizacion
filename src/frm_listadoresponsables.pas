@@ -53,17 +53,17 @@ uses
 procedure TfrmListadoResponsables.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
- if NOT (fsModal in (sender as TForm).FormState)  then //Me fijo si se abrio como modal para no destruirlo
-   CloseAction:= caFree;
+// if NOT (fsModal in (sender as TForm).FormState)  then //Me fijo si se abrio como modal para no destruirlo
+//   CloseAction:= caFree;
 end;
 
 procedure TfrmListadoResponsables.btnSalirClick(Sender: TObject);
 begin
   //Dependiendo de cómo lo abro, lo cierro
-  if (fsModal in self.FormState)  then
+//  if (fsModal in self.FormState)  then
     ModalResult:= mrOK
-  else
-    close;
+//  else
+//    close;
 end;
 
 procedure TfrmListadoResponsables.FormCreate(Sender: TObject);

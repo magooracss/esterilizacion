@@ -142,6 +142,7 @@ uses
   dmresponsables
   ,dmalumnos
   ,Dialogs
+  ,SD_Configuracion
   ;
 
 
@@ -409,7 +410,7 @@ begin
     Writeln(F,'Articulos devueltos por el Alumno');
     Writeln(F,'---------------------------------');
   end;
-  Writeln(F,  TRIM (tbInventarioDescripcion.asString) + ' '+IntToStr(tbInventarioCodigo.asInteger)   )
+  Writeln(F,  TRIM (tbInventarioDescripcion.asString) + ' '+IntToStr(tbInventarioCodigo.asInteger)   );
   Writeln(F,'--------------------------------');
   Writeln(F,'Resp:' + DM_Responsables.tbResponsablelegajo.AsString + ' - ' + DM_Responsables.tbResponsablecApellidos.AsString);
   Writeln(F,' ');

@@ -3,6 +3,7 @@ object frmListadoAlumnos: TfrmListadoAlumnos
   Height = 472
   Top = 128
   Width = 765
+  BorderIcons = []
   Caption = 'Alumnos'
   ClientHeight = 472
   ClientWidth = 765
@@ -15,7 +16,7 @@ object frmListadoAlumnos: TfrmListadoAlumnos
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  Position = poDesktopCenter
+  Position = poScreenCenter
   ShowHint = True
   ShowInTaskBar = stNever
   LCLVersion = '1.0.4.0'
@@ -2138,8 +2139,8 @@ object frmListadoAlumnos: TfrmListadoAlumnos
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Height = 368
-    Top = 0
+    Height = 304
+    Top = 64
     Width = 765
     Align = alClient
     AutoFillColumns = True
@@ -2182,6 +2183,59 @@ object frmListadoAlumnos: TfrmListadoAlumnos
     TitleFont.Name = 'Arial'
     TitleFont.Pitch = fpVariable
     TitleFont.Quality = fqDraft
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 64
+    Top = 0
+    Width = 765
+    Align = alTop
+    ClientHeight = 64
+    ClientWidth = 765
+    TabOrder = 2
+    object edBusqueda: TEdit
+      Left = 120
+      Height = 24
+      Top = 24
+      Width = 376
+      Anchors = [akTop, akLeft, akRight]
+      OnKeyPress = edBusquedaKeyPress
+      TabOrder = 0
+    end
+    object Label1: TLabel
+      Left = 72
+      Height = 17
+      Top = 26
+      Width = 42
+      Caption = 'Buscar'
+      ParentColor = False
+    end
+    object rgCriterioBusqueda: TRadioGroup
+      Left = 565
+      Height = 45
+      Top = 8
+      Width = 185
+      Anchors = [akTop, akRight]
+      AutoFill = True
+      Caption = 'Criterio'
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.TopBottomSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 27
+      ClientWidth = 181
+      Columns = 2
+      ItemIndex = 0
+      Items.Strings = (
+        'Apellido'
+        'Legajo'
+      )
+      TabOrder = 1
+    end
   end
   object DS_Alumnos: TDatasource
     DataSet = dm_alumnos.qTodosLosAlumnos

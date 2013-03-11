@@ -125,8 +125,12 @@ procedure TfrmPrincipal.prgSalirExecute(Sender: TObject);
 begin
   EscribirDato(SECCION_APP, FRM_Y, IntToStr(self.Top));
   EscribirDato(SECCION_APP, FRM_X, IntToStr(self.Left));
-
-  Application.Terminate;
+  if (MessageDlg ('ATENCION'
+                ,'Realmente desea salir del programa?'
+                , mtConfirmation
+                , [mbYes, mbNo]
+                ,0 ) = mrYes) then
+   Application.Terminate;
 end;
 
 procedure TfrmPrincipal.prgUsuariosExecute(Sender: TObject);
@@ -207,11 +211,12 @@ procedure TfrmPrincipal.tugAlumnosExecute(Sender: TObject);
 var
   pant: TfrmListadoAlumnos;
 begin
-//  if ValidarAcceso(SEG_ADMINISTRADOR) then
-  begin
-    pant:= TfrmListadoAlumnos.Create (self);
-    pant.refCategoria:= CAT_ALUMNO;
-    pant.Show;
+  pant:= TfrmListadoAlumnos.Create (self);
+  pant.refCategoria:= CAT_ALUMNO;
+  try
+    pant.ShowModal;
+  finally
+    pant.Free;
   end;
 end;
 
@@ -219,21 +224,25 @@ procedure TfrmPrincipal.tugDocentesExecute(Sender: TObject);
 var
   pant: TfrmListadoAlumnos;
 begin
-  begin
-    pant:= TfrmListadoAlumnos.Create (self);
-    pant.refCategoria:= CAT_DOCENTE;
-    pant.Show;
+  pant:= TfrmListadoAlumnos.Create (self);
+  pant.refCategoria:= CAT_DOCENTE;
+  try
+    pant.ShowModal;
+  finally
+    pant.Free;
   end;
+
 end;
 
 procedure TfrmPrincipal.tugResponsablesExecute(Sender: TObject);
 var
   pant: TfrmListadoResponsables;
 begin
-//  if ValidarAcceso(SEG_ADMINISTRADOR) then
-  begin
-    pant:= TfrmListadoResponsables.Create (self);
-    pant.Show;
+  pant:= TfrmListadoResponsables.Create (self);
+  try
+   pant.ShowModal;
+  finally
+    pant.Free;
   end;
 end;
 
@@ -245,9 +254,11 @@ procedure TfrmPrincipal.estIngresoExecute(Sender: TObject);
 var
   pant: TfrmIngresoEsterilizar;
 begin
-  begin
-    pant:= TfrmIngresoEsterilizar.Create(self);
-    pant.Show;
+  pant:= TfrmIngresoEsterilizar.Create(self);
+  try
+    pant.ShowModal;
+  finally
+    pant.Free;
   end;
 end;
 
@@ -272,7 +283,11 @@ var
   pant: TfrmEgresoEsterilizacion;
 begin
   pant:= TfrmEgresoEsterilizacion.Create(self);
-  pant.Show;
+  try
+    pant.ShowModal;
+  finally
+    pant.Free;
+  end;
 end;
 
 procedure TfrmPrincipal.estHistoricoExecute(Sender: TObject);
@@ -280,7 +295,11 @@ var
   pant: TfrmListadoEsterilizar;
 begin
   pant:= TfrmListadoEsterilizar.Create(self);
-  pant.Show;
+  try
+    pant.ShowModal;
+  finally
+    pant.Free;
+  end;
 end;
 
 (*******************************************************************************
@@ -306,6 +325,7 @@ begin
   pant:= TfrmListadoPrestamos.Create (self);
   pant.Show;
 end;
+
 
 (*******************************************************************************
 *** Prestamos

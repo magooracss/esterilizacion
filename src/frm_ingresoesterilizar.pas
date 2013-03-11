@@ -97,7 +97,7 @@ uses
 procedure TfrmIngresoEsterilizar.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
-  CloseAction:= caFree;
+  //CloseAction:= caFree;
 end;
 
 procedure TfrmIngresoEsterilizar.FormCreate(Sender: TObject);

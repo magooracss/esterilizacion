@@ -4,6 +4,7 @@ object frmInventarioAE: TfrmInventarioAE
   Top = 206
   Width = 666
   ActiveControl = DBEdit2
+  BorderIcons = []
   Caption = 'Inventario'
   ClientHeight = 224
   ClientWidth = 666
@@ -1116,9 +1117,9 @@ object frmInventarioAE: TfrmInventarioAE
   end
   object DBText1: TDBText
     Left = 16
-    Height = 23
+    Height = 1
     Top = 29
-    Width = 81
+    Width = 1
     DataField = 'Codigo'
     DataSource = ds_inventario
     Font.CharSet = ANSI_CHARSET
@@ -1133,9 +1134,9 @@ object frmInventarioAE: TfrmInventarioAE
   end
   object DBText2: TDBText
     Left = 456
-    Height = 23
+    Height = 1
     Top = 29
-    Width = 81
+    Width = 1
     DataField = 'CodigoDeBarras'
     DataSource = ds_inventario
     Font.CharSet = ANSI_CHARSET

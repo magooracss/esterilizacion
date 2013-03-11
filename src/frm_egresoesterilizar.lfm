@@ -3,6 +3,7 @@ object frmEgresoEsterilizacion: TfrmEgresoEsterilizacion
   Height = 645
   Top = 62
   Width = 788
+  BorderIcons = []
   Caption = 'Egreso esterilización'
   ClientHeight = 645
   ClientWidth = 788
@@ -14,7 +15,7 @@ object frmEgresoEsterilizacion: TfrmEgresoEsterilizacion
   Font.Quality = fqDraft
   OnClose = FormClose
   OnCreate = FormCreate
-  Position = poDesktopCenter
+  Position = poScreenCenter
   LCLVersion = '1.0.4.0'
   object gbAlumno: TGroupBox
     Left = 0

@@ -94,7 +94,7 @@ end;
 
 procedure TfrmListadoEsterilizar.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-  CloseAction:= caFree;
+  //CloseAction:= caFree;
 end;
 
 procedure TfrmListadoEsterilizar.FormCreate(Sender: TObject);

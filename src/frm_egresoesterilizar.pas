@@ -164,7 +164,7 @@ end;
 procedure TfrmEgresoEsterilizacion.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
-  CloseAction:= caFree;
+ // CloseAction:= caFree;
 end;
 
 

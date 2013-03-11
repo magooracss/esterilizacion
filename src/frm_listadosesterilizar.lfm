@@ -3,6 +3,7 @@ object frmListadoEsterilizar: TfrmListadoEsterilizar
   Height = 440
   Top = 207
   Width = 1026
+  BorderIcons = [biMinimize, biMaximize]
   Caption = 'Listado Esterilizar'
   ClientHeight = 440
   ClientWidth = 1026

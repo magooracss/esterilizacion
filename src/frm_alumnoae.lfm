@@ -3,6 +3,7 @@ object frmAlumnoae: TfrmAlumnoae
   Height = 695
   Top = 40
   Width = 727
+  BorderIcons = []
   Caption = 'Alumno'
   ClientHeight = 695
   ClientWidth = 727
@@ -14,7 +15,7 @@ object frmAlumnoae: TfrmAlumnoae
   Font.Quality = fqDraft
   OnCreate = FormCreate
   OnShow = FormShow
-  Position = poOwnerFormCenter
+  Position = poScreenCenter
   LCLVersion = '1.0.4.0'
   object DBEdit1: TDBEdit
     Left = 11
@@ -1347,7 +1348,7 @@ object frmAlumnoae: TfrmAlumnoae
       end
     end
   end
-  object DBEdit6: TDBEdit
+  object dbTarjetaDigito: TDBEdit
     Left = 669
     Height = 24
     Top = 76

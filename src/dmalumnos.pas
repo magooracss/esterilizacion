@@ -13,11 +13,15 @@ const
   CAT_ALUMNO = 'A';
   CAT_DOCENTE = 'D';
 
+  idx_busApellido = 0;
+  idx_busLegajo = 1;
+
 type
 
   { Tdm_alumnos }
 
   Tdm_alumnos = class(TDataModule)
+    qBuscarDatosUnicos: TZQuery;
     qBuscarAlumnoCBBVISIBLE: TSmallintField;
     qBuscarAlumnoCBCAPELLIDOS: TStringField;
     qBuscarAlumnoCBCNOMBRES: TStringField;
@@ -197,6 +201,8 @@ type
     procedure inicializar;
 
     function camposObligatoriosCompletos: boolean;
+    function datosUnicos: Boolean;
+    procedure Buscar (dato: string; criterio: integer);
   end;
 
 var
@@ -252,6 +258,13 @@ begin
   with qTodosLosAlumnos  do
   begin
     if active then close;
+
+    sql.Clear;
+    sql.add( 'SELECT * ');
+    sql.add( 'FROM tbAlumnos');
+    sql.add( 'WHERE (bVisible = 1)');
+    sql.add(' and (Categoria LIKE :categoria)');
+    sql.Add('ORDER BY cApellidos, cNombres');
     ParamByName('categoria').asString:= _refCategoria;
     open;
   end;
@@ -390,6 +403,54 @@ begin
   Result:= ((TRIM(tbAlumnosDireccion.AsString) <> EmptyStr)
             AND (TRIM(tbAlumnosTelefono.AsString) <> EmptyStr)
            );
+end;
+
+function Tdm_alumnos.datosUnicos: Boolean;
+begin
+  with qBuscarDatosUnicos do
+  begin
+    if active then close;
+    ParamByName('elLegajo').asInteger:= tbAlumnosnroAlumno.AsInteger;
+    ParamByName('elDocumento').AsString:= TRIM(tbAlumnosDocumento.AsString);
+    Open;
+    if (RecordCount > 0) then
+     Result:= (TRIM(qBuscarDatosUnicos.FieldByName('idAlumno').AsString) = TRIM(tbAlumnosidAlumno.asString))
+    else
+     Result:= true;
+  end;
+end;
+
+procedure Tdm_alumnos.Buscar(dato: string; criterio: integer);
+begin
+  with qTodosLosAlumnos do
+  begin
+    with qTodosLosAlumnos  do
+    begin
+      if active then close;
+
+      sql.Clear;
+      sql.add( 'SELECT * ');
+      sql.add( 'FROM tbAlumnos');
+      sql.add( 'WHERE (bVisible = 1)');
+      sql.add(' and (Categoria LIKE :categoria)');
+      case criterio of
+       idx_busApellido: sql.add(' and (UPPER(cApellidos) LIKE  UPPER(:parametro) || ''%'')');
+       idx_busLegajo: sql.add(' and (nroAlumno = :parametro)');
+      end;
+      sql.Add('ORDER BY cApellidos, cNombres');
+
+      ParamByName('categoria').asString:= _refCategoria;
+      case criterio of
+       idx_busApellido: ParamByName('parametro').asString:= TRIM (dato);
+       idx_busLegajo: ParamByName('parametro').asInteger:= StrToIntDef(TRIM (dato), 0);
+      end;
+
+
+
+      open;
+    end;
+
+  end;
 end;
 
 end.

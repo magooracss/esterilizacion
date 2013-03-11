@@ -3,6 +3,7 @@ object frmResponsableae: TfrmResponsableae
   Height = 628
   Top = 72
   Width = 687
+  BorderIcons = []
   Caption = 'Responsable'
   ClientHeight = 628
   ClientWidth = 687
@@ -13,7 +14,7 @@ object frmResponsableae: TfrmResponsableae
   Font.Pitch = fpVariable
   Font.Quality = fqDraft
   OnShow = FormShow
-  Position = poOwnerFormCenter
+  Position = poScreenCenter
   LCLVersion = '1.0.4.0'
   object DBEdit1: TDBEdit
     Left = 11

@@ -2099,4 +2099,39 @@ object dm_alumnos: Tdm_alumnos
       Size = 8
     end
   end
+  object qBuscarDatosUnicos: TZQuery
+    Connection = dm_conexion.cnxGeneral
+    SQL.Strings = (
+      'SELECT *'
+      'FROM tbAlumnos'
+      'WHERE (bVisible = 1)'
+      '     and ((nroAlumno = :elLegajo)'
+      '     or  (documento LIKE :elDocumento))'
+      '  '
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'elLegajo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'elDocumento'
+        ParamType = ptUnknown
+      end>
+    left = 88
+    top = 272
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'elLegajo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'elDocumento'
+        ParamType = ptUnknown
+      end>
+  end
 end

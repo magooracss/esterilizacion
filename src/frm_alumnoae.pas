@@ -21,7 +21,7 @@ type
     cbTipoDoc: TComboBox;
     DBDateEdit1: TDBDateEdit;
     DBDateEdit2: TDBDateEdit;
-    DBEdit6: TDBEdit;
+    dbTarjetaDigito: TDBEdit;
     DBEdit7: TDBEdit;
     DBEdit8: TDBEdit;
     DBEdit9: TDBEdit;
@@ -76,6 +76,7 @@ implementation
 uses
   dmalumnos
   ,dmfotos
+  ,dmvalidar
   ;
 { TfrmAlumnoae }
 
@@ -104,8 +105,13 @@ var
 begin
   idx:= DM_General.obtenerIDIntComboBox(cbTipoDoc);
   dm_alumnos.ActualizarCombos (idx);
-  dm_alumnos.Grabar;
-  ModalResult:= mrOK;
+  if dm_alumnos.DatosUnicos then
+  begin
+    dm_alumnos.Grabar;
+    ModalResult:= mrOK;
+  end
+  else
+    ShowMessage('Los datos ya están cargados en otra persona');
 end;
 
 procedure TfrmAlumnoae.DBEdit3Exit(Sender: TObject);
@@ -133,6 +139,7 @@ begin
 //  dm_alumnos:= Tdm_alumnos.Create(self);
   DM_General.CargarComboBox(cbTipoDoc,'TipoDocumento', 'idTipoDocumento', dm_alumnos.qTiposDocumento);
   cbTipoDoc.ItemIndex:= 1;
+  dbTarjetaDigito.ReadOnly:= (DM_Validar.pTarjetaAlumno <> SEG_TODO);
 end;
 
 procedure TfrmAlumnoae.setCategoria(AValue: string);

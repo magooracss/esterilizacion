@@ -3,7 +3,7 @@ object frmIngresoEsterilizar: TfrmIngresoEsterilizar
   Height = 580
   Top = 152
   Width = 667
-  BorderIcons = [biMinimize, biMaximize]
+  BorderIcons = []
   Caption = 'Ingreso para Esterilizar'
   ClientHeight = 580
   ClientWidth = 667
